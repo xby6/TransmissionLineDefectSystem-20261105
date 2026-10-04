@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <PageHeader title="检测任务管理" description="创建检测任务，跟踪执行状态并查看结果。" eyebrow="DETECTION WORKSPACE" />
     <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
       <el-form-item label="任务名称" prop="name">
         <el-input v-model="queryParams.name" placeholder="请输入任务名称" clearable style="width: 240px"
@@ -49,26 +50,14 @@
 
     <el-table v-loading="loading" :data="taskList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="任务号" align="center" prop="id" />
-      <el-table-column label="任务名称" align="center" prop="name" />
-      <el-table-column label="执行平台" align="center" prop="container">
+      <el-table-column label="任务号" align="center" prop="id" width="80" />
+      <el-table-column label="任务名称" align="left" prop="name" min-width="200" show-overflow-tooltip />
+      <el-table-column label="执行平台" align="left" prop="container" min-width="175" show-overflow-tooltip>
         <template #default="scope">
           <span>{{ getContainerName(scope.row.container) }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="算法名称" align="center" prop="algo" />
-      <el-table-column label="任务参数" align="center" prop="args" width="120">
-        <template #default="scope">
-          <el-tooltip effect="dark" placement="top">
-            <template #content>
-              <div style="max-width: 400px; white-space: pre-wrap;">{{ formatArgs(scope.row.args) }}</div>
-            </template>
-            <el-button link type="primary">查看参数</el-button>
-          </el-tooltip>
-        </template>
-      </el-table-column>
-      <el-table-column label="备注信息" align="center" prop="remark" />
-      <el-table-column label="任务状态" align="center" prop="state">
+      <el-table-column label="任务状态" align="center" prop="state" width="100">
         <template #default="scope">
           <div style="display: flex; align-items: center; justify-content: center;">
             <el-tag :type="getStatusType(scope.row.state, scope.row.result)">
@@ -99,17 +88,29 @@
           <span v-else>-</span>
         </template>
       </el-table-column>
-      <el-table-column label="任务初始化时间" align="center" prop="initTime" width="180">
+      <el-table-column label="算法名称" align="left" prop="algo" min-width="205" show-overflow-tooltip />
+      <el-table-column label="任务参数" align="center" prop="args" width="120">
+        <template #default="scope">
+          <el-tooltip effect="dark" placement="top">
+            <template #content>
+              <div style="max-width: 400px; white-space: pre-wrap;">{{ formatArgs(scope.row.args) }}</div>
+            </template>
+            <el-button link type="primary">查看参数</el-button>
+          </el-tooltip>
+        </template>
+      </el-table-column>
+      <el-table-column label="备注信息" align="center" prop="remark" min-width="120" show-overflow-tooltip />
+      <el-table-column label="创建时间" align="center" prop="initTime" width="180">
         <template #default="scope">
           <span>{{ parseTime(scope.row.initTime, '{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="任务结束时间" align="center" prop="endTime" width="180">
+      <el-table-column label="完成时间" align="center" prop="endTime" width="180">
         <template #default="scope">
           <span>{{ parseTime(scope.row.endTime, '{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
+      <el-table-column label="操作" align="center" fixed="right" width="210" class-name="small-padding fixed-width">
         <template #default="scope">
           <el-button link type="primary" icon="VideoPlay" @click="handleExecute(scope.row)"
             :disabled="scope.row.state === 'running'" v-hasPermi="['task:task:execute']">执行</el-button>
@@ -589,6 +590,7 @@
 </template>
 
 <script setup name="Task">
+import PageHeader from '@/components/PageHeader/index.vue'
 import { listTask, getTask, delTask, addTask, updateTask, executeTask } from "@/api/task/task";
 import { listFile, down } from "@/api/file/file";
 import { listContainer } from "@/api/container/container";

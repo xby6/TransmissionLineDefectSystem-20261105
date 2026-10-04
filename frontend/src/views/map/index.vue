@@ -6,11 +6,11 @@
     <div class="map-header">
       <div class="header-left">
         <div class="title-icon">
-          <img src="@/assets/images/profile.jpg" class="title-img">
+          <img src="@/assets/logo/grid-mark.svg" class="title-img">
         </div>
         <div class="header-content">
-          <h2 class="map-title">复杂背景下输电线路关键部件精准识别与缺陷智能检测系统</h2>
-          <p class="map-subtitle">实时监控与数据分析平台</p>
+          <h2 class="map-title">输电线路监测</h2>
+          <p class="map-subtitle">节点定位 · 关联图像 · 运行状态</p>
         </div>
       </div>
       <div class="header-right">
@@ -2465,4 +2465,28 @@ const getSampleData = () => {
 :deep(.images-container::-webkit-scrollbar-thumb:hover) {
   background: rgba(96, 194, 212, 0.5);
 }
+
+/* Match the inspection workspace while retaining Leaflet interactions. */
+.dashboard-container { background: #12243e; }
+.map-header { background: #13243c; border-bottom-color: #263b56; padding: 18px 20px; }
+.title-icon { width: 34px; height: 34px; border-radius: 9px; }
+.header-left { min-width: 0; gap: 12px; }
+.map-title { color: #e8f1ff; font-weight: 600; letter-spacing: .3px; }
+.map-subtitle, .section-title p { color: #87a0bf; }
+.time-display { background: #1a304b; color: #adc2dc; border-color: #2c4563; font-size: 12px; }
+.right-charts { background: #13243c; border-left-color: #263b56; box-shadow: none; padding: 18px; }
+.control-section, .stats-section { background: #192e49; border-color: #2a425e; box-shadow: none; padding: 18px; }
+.section-header { margin-bottom: 16px; }
+.section-title h3 { text-shadow: none; font-size: 14px; font-weight: 600; }
+.section-icon { background: #223d60; border-color: #345475; width: 30px; height: 30px; }
+.grid-content.card-tech { background: #1e3552; border-color: #304a69; border-radius: 9px; }
+.card-number { color: #edf4ff; text-shadow: none; }
+.card-title { color: #acc3df; text-shadow: none; white-space: nowrap; }
+.card-icon { box-shadow: none; }
+.card-corner { display: none; }
+.btn-tech { border-radius: 8px; padding: 12px 14px; transition: background .18s; }
+.btn-tech:before { display: none; }
+.map-legend { box-shadow: none; background: #192e49; border-color: #2a425e; border-radius: 9px; }
+@media (max-width: 760px) { .map-header { padding: 12px 14px; } .map-title { font-size: 15px; } .header-right .time-display { display: none; } }
+
 </style>

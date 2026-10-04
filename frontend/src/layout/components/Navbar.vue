@@ -13,7 +13,8 @@
       <div class="avatar-container">
         <el-dropdown @command="handleCommand" class="right-menu-item hover-effect" trigger="click">
           <div class="avatar-wrapper">
-            <img :src="userStore.avatar" class="user-avatar" />
+            <img :src="userStore.avatar" class="user-avatar" alt="用户头像" />
+            <span class="user-name">{{ userStore.name }}</span>
             <el-icon><caret-bottom /></el-icon>
           </div>
           <template #dropdown>
@@ -93,6 +94,8 @@ function toggleTheme() {
 </script>
 
 <style lang='scss' scoped>
+.user-name { font-size: 12px; color: var(--grid-text); margin: 0 8px; }
+@media (max-width: 640px) { .user-name { display: none; } }
 .navbar {
   height: 50px;
   overflow: hidden;

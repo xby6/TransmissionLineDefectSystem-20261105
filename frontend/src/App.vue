@@ -15,16 +15,16 @@ onMounted(() => {
 </script>
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  text-align: left;
+  color: var(--grid-text);
 }
 
 
 body{
-  background-color: rgb(247,248,250);
+  background-color: var(--grid-bg);
 }
 </style>
 

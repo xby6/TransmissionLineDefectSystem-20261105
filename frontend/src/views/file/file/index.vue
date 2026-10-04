@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <PageHeader title="遥感数据管理" description="整理巡检图像与文件夹，为检测任务准备数据。" eyebrow="INSPECTION DATA" />
     <div class="breadcrumb" v-if="currentFolderId !== '0'">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item>
@@ -334,6 +335,7 @@
 </template>
 
 <script setup name="File">
+import PageHeader from '@/components/PageHeader/index.vue'
 import { listFile, addFileFile, updateFile,down,delFile,getFile } from "@/api/file/file";
 import { getCurrentInstance, ref, reactive, toRefs, computed, onMounted, watch } from 'vue';
 

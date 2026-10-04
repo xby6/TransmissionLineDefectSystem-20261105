@@ -1,5 +1,11 @@
 # Git 备份与恢复说明
 
+## 后续修改与界面版本
+
+2026-10-04 完成界面美化，标签为 `ui-polished-v1.2.0`；`pdf-restored-v1.2.0-clean` 保留作为 PDF 原外观的恢复点。以下固定日期备份记录指最初整理版本。
+
+从本次起，每轮修改完成并验证后进行 Git 提交，并运行 `scripts/backup-git.ps1`。新的完整历史备份位于 `TransmissionLineDefectSystem-backups/git-时间戳-提交短哈希/project.git.bundle`。恢复最新版本时，请使用对应的新 bundle；恢复命令中的标签也可替换为需要的提交或版本标签。
+
 项目目录：`D:\Work_space\project\TransmissionLineDefectSystem`。
 
 独立备份目录：`D:\Work_space\project\TransmissionLineDefectSystem-backups\20261004-200859`。这个目录在项目外，即使整个项目目录被误删，备份仍可用。请同时保留该目录；如需防止磁盘损坏，应再复制到其他磁盘。

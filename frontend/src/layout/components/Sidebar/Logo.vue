@@ -7,14 +7,17 @@
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
         <img v-if="logo" :src="logo" class="sidebar-logo" />
-        <h1 class="sidebar-title">{{ title }}</h1>
+        <div class="sidebar-brand" :title="title">
+          <h1 class="sidebar-title">输电线路智能检测</h1>
+          <span class="sidebar-caption">TRANSMISSION INSPECTION</span>
+        </div>
       </router-link>
     </transition>
   </div>
 </template>
 
 <script setup>
-import logo from '@/assets/logo/logo.png'
+import logo from '@/assets/logo/grid-mark.svg'
 import useSettingsStore from '@/store/modules/settings'
 import variables from '@/assets/styles/variables.module.scss'
 
@@ -58,6 +61,9 @@ const getLogoTextColor = computed(() => {
   opacity: 0;
 }
 
+.sidebar-brand { text-align: left; min-width: 0; display: flex; flex-direction: column; gap: 2px; line-height: normal; }
+.sidebar-caption { display: block; color: #7891b2; font-size: 8px; line-height: 14px; letter-spacing: 1px; white-space: nowrap; }
+
 .sidebar-logo-container {
   position: relative;
   width: 100%;
@@ -70,12 +76,17 @@ const getLogoTextColor = computed(() => {
   & .sidebar-logo-link {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
 
     & .sidebar-logo {
       width: 32px;
       height: 32px;
       vertical-align: middle;
-      margin-right: 12px;
+      margin-right: 0;
+      flex-shrink: 0;
     }
 
     & .sidebar-title {
@@ -83,7 +94,7 @@ const getLogoTextColor = computed(() => {
       margin: 0;
       color: v-bind(getLogoTextColor);
       font-weight: 600;
-      line-height: 50px;
+      line-height: 20px;
       font-size: 14px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
@@ -91,6 +102,7 @@ const getLogoTextColor = computed(() => {
   }
 
   &.collapse {
+    .sidebar-logo-link { padding: 0; justify-content: center; }
     .sidebar-logo {
       margin-right: 0px;
     }

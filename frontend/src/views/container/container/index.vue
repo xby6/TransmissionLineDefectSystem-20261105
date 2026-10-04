@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <PageHeader title="算力平台" description="集中管理算法平台、检测模型与计算资源。" eyebrow="COMPUTE RESOURCES" />
     <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
       <el-form-item label="平台名称" prop="name">
         <el-input
@@ -121,6 +122,7 @@
 </template>
 
 <script setup name="Container">
+import PageHeader from '@/components/PageHeader/index.vue'
 import { listContainer, getContainer, delContainer, addContainer, updateContainer, } from "@/api/container/container";
 import AlgorithmManagement from './AlgorithmManagement.vue'
 import ModelManagement from './ModelManagement.vue'

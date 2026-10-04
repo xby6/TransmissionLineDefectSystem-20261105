@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-04",
+  "project": "D:\\Work_space\\project\\TransmissionLineDefectSystem",
+  "production_build": {
+    "command": "node node_modules/vite/bin/vite.js build",
+    "working_directory": "frontend",
+    "exit_code": 0
+  },
+  "browser_checks": {
+    "login": "admin login passed; empty required fields show validation errors",
+    "dashboard": {
+      "tasks": 6,
+      "files": 26,
+      "platforms": 2,
+      "nodes": 4,
+      "chart_canvases": 6
+    },
+    "management_pages": "task, node, platform and file lists rendered with real records",
+    "task_wizard": "four-step dialog opened; no new task submitted",
+    "existing_result_preview": "task 34 result image 66.jpg loaded successfully",
+    "monitoring_map": "satellite tiles, four named node markers and connecting lines rendered",
+    "mobile_390x844": {
+      "login_scroll_width": 390,
+      "dashboard_scroll_width": 384,
+      "horizontal_page_overflow": false
+    }
+  },
+  "scope": "Frontend presentation only. Backend and algorithm source unchanged; two model weight hashes matched baseline.",
+  "screenshots": [
+    "login-desktop.png",
+    "login-mobile.png",
+    "home-desktop.png",
+    "map-desktop.png"
+  ]
+}

@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <PageHeader title="输电节点管理" description="维护输电塔位置、运行状态与关联巡检图像。" eyebrow="TRANSMISSION NODES" />
     <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
       <el-form-item label="节点名称" prop="name">
         <el-input
@@ -155,6 +156,7 @@
 </template>
 
 <script setup name="Node">
+import PageHeader from '@/components/PageHeader/index.vue'
 import { listNode, getNode, delNode, addNode, updateNode } from "@/api/node/node";
 
 import { getToken } from '@/utils/auth';
