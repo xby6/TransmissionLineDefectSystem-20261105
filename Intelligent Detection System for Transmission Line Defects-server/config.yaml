@@ -1,0 +1,36 @@
+algorithms:
+  algorithm:
+    args: '{}'
+    args_intro: '{}'
+    file: algo/algorithm.py
+    intro: this is test
+  deeplabv3:
+    args: '{"model_name": "电气设备语义分割模型.pt"}'
+    args_intro: '{"model_name": "模型名"}'
+    file: algo/电气设备语义分割模型算法.py
+    intro: DeepLabV3+ 电气设备语义分割，使用现存训练模型。
+  去雨后增强处理:
+    args: '{"strength": 0.3}'
+    args_intro: '{"strength": "去雨降噪强度（大于 0）"}'
+    file: algo/去雨后增强处理.py
+    intro: 去雨降噪、局部对比度增强和细节恢复。
+  去雾恢复:
+    args: '{"omega": 0.95, "size": 15}'
+    args_intro: '{"omega": "去雾强度（0 到 1）", "size": "暗通道窗口大小（正整数）"}'
+    file: algo/去雾恢复.py
+    intro: 使用暗通道先验和对比度增强恢复雾天巡检图像。
+  曝光校正与细节恢复:
+    args: '{}'
+    args_intro: '{}'
+    file: algo/曝光校正与细节恢复.py
+    intro: 自动识别逆光、过曝和欠曝并校正曝光。
+  电气设备缺陷检测模型算法:
+    args: '{"model_name": "best.pt", "input_conf":0.5}'
+    args_intro: '{"model_name": "模型名", "input_conf":"置信度"}'
+    file: algo/电气设备缺陷检测模型算法.py
+    intro: 这是一个电气设备缺陷检测模型算法，用于检测无人机图像中的电气设备缺陷。
+  电气设备语义分割模型算法:
+    args: '{"model_name": "电气设备语义分割模型.pt"}'
+    args_intro: '{"model_name": "模型名"}'
+    file: algo/电气设备语义分割模型算法.py
+    intro: 这是一个电气设备语义分割模型算法，用于对无人机图像中的电气设备进行像素级分割识别。

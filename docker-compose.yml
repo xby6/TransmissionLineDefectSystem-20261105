@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: transmission-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: elyw
+      POSTGRES_PASSWORD: elyw1234
+      POSTGRES_DB: elyw_algo
+      TZ: Asia/Shanghai
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    networks:
+      - transmission-net
+
+  redis:
+    image: redis:7
+    container_name: transmission-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - transmission-net
+
+  backend:
+    image: intelligentdetectionsystemfortransmissionlinedefects-backend:latest
+    container_name: transmission-backend
+    command: ["python", "app.py", "--env=prod"]
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "127.0.0.1:9099:9099"
+    networks:
+      - transmission-net
+
+  algo-server:
+    image: transmission-algo
+    container_name: transmission-algo
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks:
+      - transmission-net
+
+networks:
+  transmission-net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
