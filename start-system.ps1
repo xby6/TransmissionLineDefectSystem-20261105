@@ -9,9 +9,9 @@ $taskRoot = $PSScriptRoot
 $logDir = Join-Path $taskRoot 'tmp\runtime'
 New-Item -ItemType Directory -Path $logDir -Force | Out-Null
 $statePath = Join-Path $logDir 'processes.json'
-$managed = @()
+[array]$managed = @()
 if (Test-Path -LiteralPath $statePath) {
-    $managed = @(Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json)
+    $managed = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
 }
 $env:PYTHONUTF8 = '1'
 

@@ -1,0 +1,275 @@
+{
+  "checked_at": "2026-10-04T19:18:00.315159",
+  "tasks": [
+    {
+      "container": 21,
+      "args": "{\"args\": [{\"omega\": 0.95, \"size\": 15, \"file_ids\": [46]}]}",
+      "name": "恢复验收_去雾恢复_184235",
+      "state": "success",
+      "initTime": "2026-10-04T18:42:36",
+      "dept": 100,
+      "algo": "去雾恢复",
+      "id": 29,
+      "remark": "系统恢复后的真实执行验收样例",
+      "result": 48,
+      "endTime": "2026-10-04T18:42:37"
+    },
+    {
+      "container": 21,
+      "args": "{\"args\": [{\"strength\": 0.3, \"file_ids\": [46]}]}",
+      "name": "恢复验收_去雨后增强处理_184235",
+      "state": "success",
+      "initTime": "2026-10-04T18:42:39",
+      "dept": 100,
+      "algo": "去雨后增强处理",
+      "id": 30,
+      "remark": "系统恢复后的真实执行验收样例",
+      "result": 51,
+      "endTime": "2026-10-04T18:42:41"
+    },
+    {
+      "container": 21,
+      "args": "{\"args\": [{\"file_ids\": [46]}]}",
+      "name": "恢复验收_曝光校正与细节恢复_184235",
+      "state": "success",
+      "initTime": "2026-10-04T18:42:42",
+      "dept": 100,
+      "algo": "曝光校正与细节恢复",
+      "id": 31,
+      "remark": "系统恢复后的真实执行验收样例",
+      "result": 54,
+      "endTime": "2026-10-04T18:42:44"
+    },
+    {
+      "container": 21,
+      "args": "{\"args\": [{\"model_name\": \"best.pt\", \"input_conf\": 0.5, \"file_ids\": [46]}]}",
+      "name": "恢复验收_电气设备缺陷检测模型算法_184235",
+      "state": "success",
+      "initTime": "2026-10-04T18:42:45",
+      "dept": 100,
+      "algo": "电气设备缺陷检测模型算法",
+      "id": 32,
+      "remark": "系统恢复后的真实执行验收样例",
+      "result": 57,
+      "endTime": "2026-10-04T18:42:55"
+    },
+    {
+      "container": 21,
+      "args": "{\"args\": [{\"model_name\": \"电气设备语义分割模型.pt\", \"file_ids\": [46]}]}",
+      "name": "恢复验收_电气设备语义分割模型算法_184235",
+      "state": "success",
+      "initTime": "2026-10-04T18:42:57",
+      "dept": 100,
+      "algo": "电气设备语义分割模型算法",
+      "id": 33,
+      "remark": "系统恢复后的真实执行验收样例",
+      "result": 61,
+      "endTime": "2026-10-04T18:43:01"
+    },
+    {
+      "container": 21,
+      "args": "{\"args\":[{\"model_name\":\"best.pt\",\"input_conf\":0.5,\"file_ids\":[46]}]}",
+      "name": "页面验收_缺陷检测",
+      "state": "success",
+      "initTime": "2026-10-04T19:01:45",
+      "dept": 100,
+      "algo": "电气设备缺陷检测模型算法",
+      "id": 34,
+      "remark": "通过完整四步页面向导创建的恢复验收任务",
+      "result": 65,
+      "endTime": "2026-10-04T19:02:25"
+    }
+  ],
+  "statistics": {
+    "tasks": {
+      "total": 6,
+      "by_status": [
+        {
+          "status": "success",
+          "count": 6
+        }
+      ],
+      "by_date": [
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 0
+        },
+        {
+          "date": "2026-09-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-01",
+          "count": 0
+        },
+        {
+          "date": "2026-10-02",
+          "count": 0
+        },
+        {
+          "date": "2026-10-03",
+          "count": 0
+        },
+        {
+          "date": "2026-10-04",
+          "count": 6
+        }
+      ]
+    },
+    "files": {
+      "total": 26,
+      "image_total": 7,
+      "by_type": [
+        {
+          "type": "jpg",
+          "count": 7
+        },
+        {
+          "type": "txt",
+          "count": 3
+        },
+        {
+          "type": "dir",
+          "count": 16
+        }
+      ],
+      "by_root": [
+        {
+          "root": "57",
+          "count": 2
+        },
+        {
+          "root": "61",
+          "count": 2
+        },
+        {
+          "root": "54",
+          "count": 1
+        },
+        {
+          "root": "51",
+          "count": 1
+        },
+        {
+          "root": "50",
+          "count": 1
+        },
+        {
+          "root": "0",
+          "count": 10
+        },
+        {
+          "root": "60",
+          "count": 1
+        },
+        {
+          "root": "47",
+          "count": 1
+        },
+        {
+          "root": "20",
+          "count": 1
+        },
+        {
+          "root": "53",
+          "count": 1
+        },
+        {
+          "root": "65",
+          "count": 2
+        },
+        {
+          "root": "64",
+          "count": 1
+        },
+        {
+          "root": "48",
+          "count": 1
+        },
+        {
+          "root": "56",
+          "count": 1
+        }
+      ]
+    },
+    "containers": {
+      "total": 2,
+      "by_status": [
+        {
+          "status": "stopped",
+          "count": 1
+        },
+        {
+          "status": "running",
+          "count": 1
+        }
+      ],
+      "by_type": [
+        {
+          "type": "unknown",
+          "count": 1
+        },
+        {
+          "type": "local",
+          "count": 1
+        }
+      ]
+    },
+    "nodes": {
+      "total": 4,
+      "by_status": [
+        {
+          "status": "online",
+          "count": 4
+        }
+      ],
+      "locations": [
+        {
+          "id": 1,
+          "name": "丹东2号电力塔",
+          "longitude": 124.24,
+          "latitude": 40.07,
+          "status": "online"
+        },
+        {
+          "id": 2,
+          "name": "丹东东港电塔",
+          "longitude": 124.454,
+          "latitude": 39.8378,
+          "status": "online"
+        },
+        {
+          "id": 3,
+          "name": "丹东凤城东汤镇石桥线69号电塔",
+          "longitude": 124.2101,
+          "latitude": 40.3098,
+          "status": "online"
+        },
+        {
+          "id": 4,
+          "name": "丹东孔安甲乙线",
+          "longitude": 124.3631,
+          "latitude": 40.166,
+          "status": "online"
+        }
+      ]
+    }
+  },
+  "original_model_sha256": {
+    "best.pt": "56a8a67cd2793fe46c38c1dc90fd1d74b32bd521ee9fa08fabd05568d3510b7d",
+    "电气设备语义分割模型.pt": "d120944128be741fa5ef04a348825cb405311dd14fc55915a999bd9067b7e9aa"
+  },
+  "checks": [
+    "6 retained tasks successful",
+    "real statistics",
+    "changed Python sources parsed",
+    "all 5 algorithm pipelines passed",
+    "four-step UI task passed",
+    "node popup image passed",
+    "start-stop-start passed"
+  ]
+}

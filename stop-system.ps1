@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $statePath = Join-Path $PSScriptRoot 'tmp\runtime\processes.json'
 if (-not (Test-Path -LiteralPath $statePath)) { Write-Host 'No services started by start-system.ps1.'; return }
-$managed = @(Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json)
+[array]$managed = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
 foreach ($entry in $managed) {
     $process = Get-Process -Id $entry.pid -ErrorAction SilentlyContinue
     if ($process -and $process.StartTime.ToUniversalTime().Ticks.ToString() -eq $entry.startTicks) {
