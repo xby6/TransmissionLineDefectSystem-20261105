@@ -1,0 +1,251 @@
+{
+  "started_at": "2026-10-05T20:32:28.851206+08:00",
+  "source_commit": "24fa6001b20502923d49aae954299091173459a1",
+  "platform_url": "http://127.0.0.1:8000",
+  "python_client_version": "3.10.8",
+  "sample": {
+    "source": "frontend\\src\\assets\\images\\login-transmission-restored.png",
+    "description": "Existing decorative transmission-line login background; not a labeled inspection dataset.",
+    "original_size": [
+      1814,
+      867
+    ],
+    "input_name": "transmission-smoke-test.jpg",
+    "input_size": [
+      800,
+      382
+    ],
+    "sha256": "89f52c579e58441b43c8b9d65af1080c5f97615acb240f32c87e78ad0d16584a"
+  },
+  "models": {
+    "best.pt": {
+      "intro": "这是一个电气设备缺陷检测模型，用于检测无人机图像中的电气设备缺陷。",
+      "file": "model/best.pt"
+    },
+    "电气设备语义分割模型.pt": {
+      "intro": "这是一个电气设备语义分割模型，用于对无人机图像中的电气设备进行像素级分割识别。",
+      "file": "model/电气设备语义分割模型.pt"
+    }
+  },
+  "scope": "Current local platform, registered default arguments, one JPEG per request. Validates real execution and output artifacts, not detection or segmentation accuracy, GPU execution, video processing, or arbitrary input/parameter combinations.",
+  "results": [
+    {
+      "algorithm": "algorithm",
+      "kind": "test_template",
+      "args": {},
+      "task_id": "verify-5556e2587d114f4aafb580edd2f5b401",
+      "started_at": "2026-10-05T20:32:28.900595+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.txt",
+          "bytes": 48,
+          "sha256": "5e7047c434b8f13df191016abe202ff0f0c843c2caf18e6ebf2f95f73c0b37a4",
+          "kind": "text",
+          "preview": "文件名,结果\ntransmission-smoke-test.jpg,ok\n"
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "18eaf77129eada24e1abc870b67011e1db20f003d6d727506a336adea48875fc",
+      "result_bytes": 200,
+      "elapsed_seconds": 10.74,
+      "finished_at": "2026-10-05T20:32:39.644466+08:00"
+    },
+    {
+      "algorithm": "deeplabv3",
+      "kind": "segmentation_alias",
+      "args": {
+        "model_name": "电气设备语义分割模型.pt"
+      },
+      "task_id": "verify-95c19a5971424e27874bdd0c8084c0fe",
+      "started_at": "2026-10-05T20:32:39.645462+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.jpg",
+          "bytes": 116974,
+          "sha256": "485553450845c5fdecdad01799174dc23688f5746eb16469fccc105898ab4351",
+          "kind": "image",
+          "format": "JPEG",
+          "size": [
+            800,
+            382
+          ]
+        },
+        {
+          "name": "transmission-smoke-test.txt",
+          "bytes": 77,
+          "sha256": "39cbdd1904309b1bf532122453f00f2cfc1b6c32808778ec47ba1cdbfc19e2ef",
+          "kind": "text",
+          "preview": "Detected Classes and Area Ratio:\n绝缘子: 0.14%\n杆塔: 8.20%\n导线: 0.66%"
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "0c72c7b542071ad370affbe5b3dfc2f52e243efffcabf6672d1ff9e27ff682d1",
+      "result_bytes": 117209,
+      "elapsed_seconds": 5.16,
+      "finished_at": "2026-10-05T20:32:44.802538+08:00"
+    },
+    {
+      "algorithm": "去雨后增强处理",
+      "kind": "official_algorithm",
+      "args": {
+        "strength": 0.3
+      },
+      "task_id": "verify-aec0f15edcc948cfad893ecaf786dce8",
+      "started_at": "2026-10-05T20:32:44.803546+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.jpg",
+          "bytes": 183014,
+          "sha256": "a417f58a80c99cb52264b2c1d5017b0d379d558f5591030edfd3f690e5e4e529",
+          "kind": "image",
+          "format": "JPEG",
+          "size": [
+            800,
+            382
+          ]
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "9853c6a6814788650d431b4d64209212bdb95eb5e4e6d1c40d45a1bb1935cfb2",
+      "result_bytes": 183166,
+      "elapsed_seconds": 2.14,
+      "finished_at": "2026-10-05T20:32:46.947952+08:00"
+    },
+    {
+      "algorithm": "去雾恢复",
+      "kind": "official_algorithm",
+      "args": {
+        "omega": 0.95,
+        "size": 15
+      },
+      "task_id": "verify-e11e477c50c14fe68bf7faf89b462964",
+      "started_at": "2026-10-05T20:32:46.948952+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.jpg",
+          "bytes": 192122,
+          "sha256": "8f2b2207478a9a6f12ff2ef310bed05c9fb6475bbfc5d4fa9613cb1eb42a15d0",
+          "kind": "image",
+          "format": "JPEG",
+          "size": [
+            800,
+            382
+          ]
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "f859ad31245da421d968f6d91967e211ff9a2184563b249df20220c41570e883",
+      "result_bytes": 192274,
+      "elapsed_seconds": 0.85,
+      "finished_at": "2026-10-05T20:32:47.795877+08:00"
+    },
+    {
+      "algorithm": "曝光校正与细节恢复",
+      "kind": "official_algorithm",
+      "args": {},
+      "task_id": "verify-b37e6668fe724e3a8222b97c92d54ffa",
+      "started_at": "2026-10-05T20:32:47.797893+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.jpg",
+          "bytes": 186212,
+          "sha256": "bd02d087642e76dbae5d0533f44c8b3959cbab51863ad2029124f3a3509e8f69",
+          "kind": "image",
+          "format": "JPEG",
+          "size": [
+            800,
+            382
+          ]
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "dec5844758071ff631a66fd4d33a5f51a4edb6234fbf3c763ac72f3ffbe2e2d8",
+      "result_bytes": 186364,
+      "elapsed_seconds": 0.79,
+      "finished_at": "2026-10-05T20:32:48.590645+08:00"
+    },
+    {
+      "algorithm": "电气设备缺陷检测模型算法",
+      "kind": "official_algorithm",
+      "args": {
+        "model_name": "best.pt",
+        "input_conf": 0.5
+      },
+      "task_id": "verify-2327ab6e406548e5846517419b7c9226",
+      "started_at": "2026-10-05T20:32:48.591644+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.txt",
+          "bytes": 31,
+          "sha256": "cb65915ba5753537e097fea5ecb5c2a4261e730a7de3f287aeb1a5244f50fa4d",
+          "kind": "text",
+          "preview": "类别ID,置信度,x1,y1,x2,y2\n"
+        },
+        {
+          "name": "transmission-smoke-test.jpg",
+          "bytes": 62757,
+          "sha256": "50c7872172a326f290b6cd94c8dd7e3140ff7b4601cfbd42a0b95e6acbc51ffa",
+          "kind": "image",
+          "format": "JPEG",
+          "size": [
+            800,
+            382
+          ],
+          "detection_count": 0
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "5814782ba92d079d21df2ed5ac5d20c04646b0504d4d4a11429df29f876eac79",
+      "result_bytes": 63070,
+      "elapsed_seconds": 14.12,
+      "finished_at": "2026-10-05T20:33:02.707222+08:00"
+    },
+    {
+      "algorithm": "电气设备语义分割模型算法",
+      "kind": "official_algorithm",
+      "args": {
+        "model_name": "电气设备语义分割模型.pt"
+      },
+      "task_id": "verify-b131305ba335400f94d46e34528ff2d6",
+      "started_at": "2026-10-05T20:33:02.709222+08:00",
+      "http_status": 200,
+      "artifacts": [
+        {
+          "name": "transmission-smoke-test.jpg",
+          "bytes": 116974,
+          "sha256": "485553450845c5fdecdad01799174dc23688f5746eb16469fccc105898ab4351",
+          "kind": "image",
+          "format": "JPEG",
+          "size": [
+            800,
+            382
+          ]
+        },
+        {
+          "name": "transmission-smoke-test.txt",
+          "bytes": 77,
+          "sha256": "39cbdd1904309b1bf532122453f00f2cfc1b6c32808778ec47ba1cdbfc19e2ef",
+          "kind": "text",
+          "preview": "Detected Classes and Area Ratio:\n绝缘子: 0.14%\n杆塔: 8.20%\n导线: 0.66%"
+        }
+      ],
+      "status": "passed",
+      "result_zip_sha256": "675f717f28d13a768277c69b02ff1cd7fb1c0705070b740932f3f9f77fb30778",
+      "result_bytes": 117209,
+      "elapsed_seconds": 2.66,
+      "finished_at": "2026-10-05T20:33:05.367158+08:00"
+    }
+  ],
+  "finished_at": "2026-10-05T20:33:05.368165+08:00",
+  "running_tasks_after": {
+    "running_tasks": []
+  },
+  "passed": 7,
+  "failed": 0
+}
