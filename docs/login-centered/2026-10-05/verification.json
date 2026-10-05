@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-05",
+  "change": "Restore original centered login form; optimize full-screen background using existing transmission image and a blue gradient overlay.",
+  "unchanged": "Authentication script matches original restored baseline exactly; other application pages are unchanged.",
+  "production_build": "passed",
+  "login": "admin login reached dashboard successfully",
+  "default_viewport": {
+    "width": 646,
+    "height": 828,
+    "form_width": 400,
+    "offset_x": 0,
+    "offset_y": 0
+  },
+  "mobile_viewport": {
+    "width": 390,
+    "height": 844,
+    "form_width": 350,
+    "scroll_width": 390,
+    "offset_x": 0,
+    "offset_y": 0
+  },
+  "screenshots": [
+    "login-centered.jpg"
+  ]
+}
