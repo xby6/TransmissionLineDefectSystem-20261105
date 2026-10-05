@@ -1,0 +1,329 @@
+{
+  "organized_on": "2026-10-05",
+  "image_count": 46,
+  "latest_login": "00-当前登录页面-居中.jpg",
+  "screenshots": [
+    {
+      "file": "00-当前登录页面-居中.jpg",
+      "group": "最新登录页面",
+      "source": "docs/login-centered/2026-10-05/login-centered.jpg",
+      "bytes": 58907,
+      "sha256": "76ca6650c35c7e0d88c680b2cc5ca5ea6d312f7a0e281e744a349dcc0152b0ee"
+    },
+    {
+      "file": "01-登录页面-历史分栏版.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/01-登录页面.jpg",
+      "bytes": 62041,
+      "sha256": "5295b7b1e0f4520a7a1b5c28745e2ab6c7dd90455a730ce191680eb3326a7b7e"
+    },
+    {
+      "file": "02-首页巡检总览.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/02-首页巡检总览.jpg",
+      "bytes": 58550,
+      "sha256": "89c956d325a027f1375b8263d376683560503b22b70fd4d524ef53e948066a3c"
+    },
+    {
+      "file": "02b-首页资源分布与趋势.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/02b-首页资源分布与趋势.jpg",
+      "bytes": 59029,
+      "sha256": "f9167ae1bb04dc1b7d02722b02df2205102cbe58065db763351a89298639f0ae"
+    },
+    {
+      "file": "03-算力平台.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/03-算力平台.jpg",
+      "bytes": 56787,
+      "sha256": "d71549428c59b70033e60ac2872e7f8c5bb30ecf1788dc8af9d420a17ebd6f3d"
+    },
+    {
+      "file": "04-遥感数据管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/04-遥感数据管理.jpg",
+      "bytes": 77243,
+      "sha256": "401b4ea5a4e5df5769c8ff9817381f2710b9179d80f28d805e6fcef51370a51f"
+    },
+    {
+      "file": "05-任务管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05-任务管理.jpg",
+      "bytes": 78810,
+      "sha256": "84010355ae9b0ad1677afd3bfb319c8fa34ae6bcfbadd783f6a0805f7650b510"
+    },
+    {
+      "file": "05a-创建任务-选择平台.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05a-创建任务-选择平台.jpg",
+      "bytes": 62017,
+      "sha256": "5d5b82503d8151e99d2e59dd95f2088ded4023137dbda5e9db7a0e9d7272bf80"
+    },
+    {
+      "file": "05b-创建任务-选择算法.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05b-创建任务-选择算法.jpg",
+      "bytes": 63154,
+      "sha256": "4c974216ec981f1c1f38862c900f8154416302177f93eeaaf61cb7e2bf21ea18"
+    },
+    {
+      "file": "05c-创建任务-选择文件.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05c-创建任务-选择文件.jpg",
+      "bytes": 46113,
+      "sha256": "59ebce4d0bd6c64276780a7d58411f33f4abeb777476573ec52be74863e24b19"
+    },
+    {
+      "file": "05c2-输入文件选择器.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05c2-输入文件选择器.jpg",
+      "bytes": 66441,
+      "sha256": "159731e90e6b357d01e32d383d508dd903ab1f9f421bc13e8f5b1252f736b6e2"
+    },
+    {
+      "file": "05d-创建任务-配置参数.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05d-创建任务-配置参数.jpg",
+      "bytes": 54007,
+      "sha256": "86df2b5cbc6240d49b0775ccfa4ad197c710d5574088fe594eff87cf16d8adc3"
+    },
+    {
+      "file": "05e-任务结果文件.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05e-任务结果文件.jpg",
+      "bytes": 67266,
+      "sha256": "ca98ee2b931ded7c166ea4a5c8ddac11647477c388c43c5e9e05f203c32cba80"
+    },
+    {
+      "file": "05f-结果图片预览.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/05f-结果图片预览.jpg",
+      "bytes": 87578,
+      "sha256": "6f2d924ae0b7c0fd6616629decbcfece01d78cb1fe5a5d36e4c611d42a773161"
+    },
+    {
+      "file": "06-节点管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/06-节点管理.jpg",
+      "bytes": 63195,
+      "sha256": "efb53396004a3991e64f90e2b8b5103b6eebb96510e0e8d6f309a8b649f456b2"
+    },
+    {
+      "file": "07-输电线路监测地图.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/07-输电线路监测地图.jpg",
+      "bytes": 120562,
+      "sha256": "c85538c516f40b3a61559b4135142fdaf5f081c330a99a744a8cac8a9b6a4bbf"
+    },
+    {
+      "file": "08-通知公告.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/08-通知公告.jpg",
+      "bytes": 51644,
+      "sha256": "ecb610b37aaac3cc40e4644621d0b3c4190d1b7f60a63dd20996d5dff2003068"
+    },
+    {
+      "file": "09-用户管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/09-用户管理.jpg",
+      "bytes": 55126,
+      "sha256": "17578575e067112aba76b42a8950a25365adf333daae5d4c961e357f09a0970c"
+    },
+    {
+      "file": "10-角色管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/10-角色管理.jpg",
+      "bytes": 54575,
+      "sha256": "1668c052d2cae46707e44e64df3ea54ac2c64e525d6ca766613cf53ab7e8cc59"
+    },
+    {
+      "file": "11-菜单管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/11-菜单管理.jpg",
+      "bytes": 78399,
+      "sha256": "f1589cc0be482ac60f86dc864ef87a4fc18832e670d84b15809302f07e4bf430"
+    },
+    {
+      "file": "12-小组管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/12-小组管理.jpg",
+      "bytes": 50791,
+      "sha256": "0790967b4d2dc63eca98c8de9ed9c2f2639067989df74925d0bcdf7df2795a3e"
+    },
+    {
+      "file": "13-职责管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/13-职责管理.jpg",
+      "bytes": 52326,
+      "sha256": "690d881cf0bf0be92d1c6aa5a59285aa2bc9bdb046ef08e3031ebee16e31fbe5"
+    },
+    {
+      "file": "14-字典管理.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/14-字典管理.jpg",
+      "bytes": 77847,
+      "sha256": "238008d9395080141b6ff8428cbfc60782498780651b94c4c9dd9432e7e79d27"
+    },
+    {
+      "file": "14b-字典数据详情.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/14b-字典数据详情.jpg",
+      "bytes": 63173,
+      "sha256": "d5a6a1473ee02b88f3ee8739cbba5959a6b9b53c4e9c3640532cf6bcb3e1729b"
+    },
+    {
+      "file": "15-参数设置.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/15-参数设置.jpg",
+      "bytes": 74856,
+      "sha256": "efe0d17b206b1b87c99813476c7b38211c8fa638cb71b2fdaf0937bd7d65a234"
+    },
+    {
+      "file": "16-操作日志.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/16-操作日志.jpg",
+      "bytes": 69967,
+      "sha256": "fe7668f9b1fee6bac2903c8ea1a890230b1bcb40fc9c30f2a6f830a6895c61a9"
+    },
+    {
+      "file": "17-登录日志.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/17-登录日志.jpg",
+      "bytes": 70053,
+      "sha256": "1acbd882399758b5b4881d7fc8d2bf7d83d8fdb915ddb9fb47af3635f8c80020"
+    },
+    {
+      "file": "18-在线用户.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/18-在线用户.jpg",
+      "bytes": 54319,
+      "sha256": "9564673ea973bb2e693da08b67368e83353b8aaaa639b19186db316440cb6a84"
+    },
+    {
+      "file": "19-服务监控.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/19-服务监控.jpg",
+      "bytes": 61321,
+      "sha256": "63ada308b614955fdd93110f07a5742725666d65c54d3f3d4479434a67e705de"
+    },
+    {
+      "file": "19b-服务监控-运行环境与磁盘.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/19b-服务监控-运行环境与磁盘.jpg",
+      "bytes": 64246,
+      "sha256": "f74e981ab7991550eb511086058e9b5135bfa8b4e556b48c646b5343b84387cd"
+    },
+    {
+      "file": "20-缓存监控.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/20-缓存监控.jpg",
+      "bytes": 62579,
+      "sha256": "dd9f77a4e03702ddeaa216fdee2af2a78da018f5abd609b73d4049087c354b36"
+    },
+    {
+      "file": "20b-缓存监控-统计图表.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/20b-缓存监控-统计图表.jpg",
+      "bytes": 55185,
+      "sha256": "c1f61e63a2198770f050ba9ca8d63ca8e4b9511c37a006bf5953454f35a8c276"
+    },
+    {
+      "file": "21-缓存列表.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/21-缓存列表.jpg",
+      "bytes": 52224,
+      "sha256": "2225eea692a798e2f0749455dab3f2d5385d9b3dd166ffe7d73d6191cb3d48ee"
+    },
+    {
+      "file": "22-表单构建.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/22-表单构建.jpg",
+      "bytes": 26765,
+      "sha256": "4b9b8b4d899e367544bd70204277e64554ecf9ee10fff04b82640b8deebfca70"
+    },
+    {
+      "file": "23-代码生成.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/23-代码生成.jpg",
+      "bytes": 46481,
+      "sha256": "7f36ec552c30bfaaf423a6c786cba8caede344d842f5039ceba9d570dc1f36dd"
+    },
+    {
+      "file": "24-系统接口.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/24-系统接口.jpg",
+      "bytes": 76926,
+      "sha256": "fd800e010b51144177c93b49d8e5cb40bea5d7d6d06a7653ad4bb7dca54257ab"
+    },
+    {
+      "file": "25-个人中心.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/25-个人中心.jpg",
+      "bytes": 59475,
+      "sha256": "325dfe44a5578d8abeebae47b8148b44d01ef3cf37751f48e2561cc14ba3b8e3"
+    },
+    {
+      "file": "25b-修改密码页面.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/25b-修改密码页面.jpg",
+      "bytes": 57660,
+      "sha256": "cc768cc0c8db0499ac01ef9d91a3b105465353453c4876878cd1b452a6052f34"
+    },
+    {
+      "file": "26-布局设置.jpg",
+      "group": "全页面运行截图",
+      "source": "docs/screenshots/2026-10-05/26-布局设置.jpg",
+      "bytes": 55269,
+      "sha256": "efbeda883bf6c4d92516b1ed2c8f6499cff3c173a7ca0d85e20d767c24ad5dc6"
+    },
+    {
+      "file": "历史-美化-登录页面-窄屏.png",
+      "group": "历史：界面美化阶段",
+      "source": "docs/ui-polish/login-mobile.png",
+      "bytes": 17455,
+      "sha256": "ed841ee8eaf845f2f205a0b140b9cd56d493b3201fbcdbe5543f6938b560aa8a"
+    },
+    {
+      "file": "历史-美化-登录页面.png",
+      "group": "历史：界面美化阶段",
+      "source": "docs/ui-polish/login-desktop.png",
+      "bytes": 62519,
+      "sha256": "45536f9ccd1b95ca286abd9a2ff45a1a7678a3366ef74d3fb8a8b05224faaca5"
+    },
+    {
+      "file": "历史-美化-监测地图.png",
+      "group": "历史：界面美化阶段",
+      "source": "docs/ui-polish/map-desktop.png",
+      "bytes": 119859,
+      "sha256": "3bc3b5c367b1236b5284643b1f19ad87a353aefa63d376a90a455923f138bce4"
+    },
+    {
+      "file": "历史-美化-首页.png",
+      "group": "历史：界面美化阶段",
+      "source": "docs/ui-polish/home-desktop.png",
+      "bytes": 61067,
+      "sha256": "d80b6356574b24004791d77cf87d8b795a3ae1eb2203a6472a3d75e9ca0cb257"
+    },
+    {
+      "file": "历史-PDF恢复-登录页面.png",
+      "group": "历史：PDF恢复阶段",
+      "source": "docs/verification/login-restored.png",
+      "bytes": 306187,
+      "sha256": "7dfaa3264cf589a1eadeb12f4abb01dacc4d073831304c92c70d6f848a54733d"
+    },
+    {
+      "file": "历史-PDF恢复-监测地图.png",
+      "group": "历史：PDF恢复阶段",
+      "source": "docs/verification/map-restored.png",
+      "bytes": 204598,
+      "sha256": "3912660cdb7770a8d6844a25aedb25c6d76241ba006425f4f1169b1b6d05caf5"
+    },
+    {
+      "file": "历史-PDF恢复-首页.png",
+      "group": "历史：PDF恢复阶段",
+      "source": "docs/verification/dashboard-restored.png",
+      "bytes": 104212,
+      "sha256": "b79c611b01c4d93f1790e1a34347be30c8b7697209bf44a192ebcb2247f0295a"
+    }
+  ]
+}
