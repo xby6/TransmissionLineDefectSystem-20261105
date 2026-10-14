@@ -1,0 +1,3001 @@
+{
+  "started_at": "2026-10-14T18:14:04.309280+08:00",
+  "platform": "http://127.0.0.1:8000",
+  "manual_algorithms": [
+    "deeplabv3",
+    "去雨后增强处理",
+    "去雾恢复",
+    "曝光校正与细节恢复",
+    "电气设备缺陷检测模型算法",
+    "电气设备语义分割模型算法",
+    "逆光&曝光处理",
+    "雨天图像处理"
+  ],
+  "algorithm_count": 11,
+  "model_count": 5,
+  "results": [
+    {
+      "label": "default-algorithm",
+      "algorithm": "algorithm",
+      "args": {},
+      "http_status": 200,
+      "elapsed_seconds": 10.6,
+      "status": "passed",
+      "files": [
+        "原图1.txt",
+        "原图2.txt"
+      ],
+      "images": {},
+      "texts": {
+        "原图1.txt": "文件名,结果\n原图1.png,ok\n",
+        "原图2.txt": "文件名,结果\n原图2.png,ok\n"
+      },
+      "summaries": {}
+    },
+    {
+      "label": "default-deeplabv3",
+      "algorithm": "deeplabv3",
+      "args": {
+        "model_name": "deeplabv3_plus.pth",
+        "overlay_alpha": 0.5,
+        "device": "auto"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 3.28,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 7.57%\n导线: 1.25%\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.72%\n导线: 2.71%\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 239024,
+              "area_ratio_percent": 91.18042
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 19846,
+              "area_ratio_percent": 7.570648
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 3274,
+              "area_ratio_percent": 1.248932
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175202,
+              "area_ratio_percent": 78.571557
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41749,
+              "area_ratio_percent": 18.722868
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6033,
+              "area_ratio_percent": 2.705575
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "default-去雨后增强处理",
+      "algorithm": "去雨后增强处理",
+      "args": {
+        "strength": 0.3
+      },
+      "http_status": 200,
+      "elapsed_seconds": 2.32,
+      "status": "passed",
+      "files": [
+        "原图1.png",
+        "原图2.png"
+      ],
+      "images": {
+        "原图1.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "原图2.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {},
+      "summaries": {}
+    },
+    {
+      "label": "default-去雾恢复",
+      "algorithm": "去雾恢复",
+      "args": {
+        "omega": 0.95,
+        "size": 15
+      },
+      "http_status": 200,
+      "elapsed_seconds": 0.92,
+      "status": "passed",
+      "files": [
+        "原图1.png",
+        "原图2.png"
+      ],
+      "images": {
+        "原图1.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "原图2.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {},
+      "summaries": {}
+    },
+    {
+      "label": "default-曝光校正与细节恢复",
+      "algorithm": "曝光校正与细节恢复",
+      "args": {},
+      "http_status": 200,
+      "elapsed_seconds": 0.85,
+      "status": "passed",
+      "files": [
+        "原图1.png",
+        "原图2.png"
+      ],
+      "images": {
+        "原图1.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "原图2.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {},
+      "summaries": {}
+    },
+    {
+      "label": "default-电气设备缺陷检测模型算法",
+      "algorithm": "电气设备缺陷检测模型算法",
+      "args": {
+        "model_name": "best.pt",
+        "input_conf": 0.5
+      },
+      "http_status": 200,
+      "elapsed_seconds": 11.42,
+      "status": "passed",
+      "files": [
+        "原图1.txt",
+        "原图1.jpg",
+        "原图2.txt",
+        "原图2.jpg"
+      ],
+      "images": {
+        "原图1.jpg": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "JPEG"
+        },
+        "原图2.jpg": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "JPEG"
+        }
+      },
+      "texts": {
+        "原图1.txt": "类别ID,置信度,x1,y1,x2,y2\n4,0.75,132.57980346679688,213.26589965820312,165.3284149169922,250.1192169189453\n",
+        "原图2.txt": "类别ID,置信度,x1,y1,x2,y2\n0,0.934,154.1263427734375,22.657922744750977,278.8667297363281,454.618408203125\n"
+      },
+      "summaries": {}
+    },
+    {
+      "label": "default-电气设备语义分割模型算法",
+      "algorithm": "电气设备语义分割模型算法",
+      "args": {
+        "model_name": "电气设备语义分割模型.pt"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 3.27,
+      "status": "passed",
+      "files": [
+        "原图1.jpg",
+        "原图1.txt",
+        "原图2.jpg",
+        "原图2.txt"
+      ],
+      "images": {
+        "原图1.jpg": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "JPEG"
+        },
+        "原图2.jpg": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "JPEG"
+        }
+      },
+      "texts": {
+        "原图1.txt": "Detected Classes and Area Ratio:\n绝缘子: 7.57%\n导线: 1.25%",
+        "原图2.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.70%\n导线: 2.71%"
+      },
+      "summaries": {}
+    },
+    {
+      "label": "default-逆光&曝光处理",
+      "algorithm": "逆光&曝光处理",
+      "args": {},
+      "http_status": 200,
+      "elapsed_seconds": 1.03,
+      "status": "passed",
+      "files": [
+        "原图1.png",
+        "原图2.png"
+      ],
+      "images": {
+        "原图1.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "原图2.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {},
+      "summaries": {}
+    },
+    {
+      "label": "default-雨天图像处理",
+      "algorithm": "雨天图像处理",
+      "args": {
+        "strength": 0.3
+      },
+      "http_status": 200,
+      "elapsed_seconds": 2.48,
+      "status": "passed",
+      "files": [
+        "原图1.png",
+        "原图2.png"
+      ],
+      "images": {
+        "原图1.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "原图2.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {},
+      "summaries": {}
+    },
+    {
+      "label": "default-语义增强",
+      "algorithm": "语义增强",
+      "args": {
+        "model_name": "语义增强",
+        "overlay_alpha": 0.5,
+        "device": "auto"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 3.3,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 8.38%\n导线: 1.01%\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.30%\n杆塔: 0.01%\n导线: 2.61%\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "语义增强",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 237511,
+              "area_ratio_percent": 90.603256
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 21978,
+              "area_ratio_percent": 8.383942
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 2655,
+              "area_ratio_percent": 1.012802
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "语义增强",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 176331,
+              "area_ratio_percent": 79.077871
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 40809,
+              "area_ratio_percent": 18.301313
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 33,
+              "area_ratio_percent": 0.014799
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 5811,
+              "area_ratio_percent": 2.606017
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "default-遮挡关系融合骨架",
+      "algorithm": "遮挡关系融合骨架",
+      "args": {
+        "model_name": "deeplabv3_plus.pth",
+        "overlay_alpha": 0.5,
+        "device": "auto",
+        "corridor_width": 5,
+        "max_gap_dist": 50,
+        "other_ratio_th": 0.35,
+        "closing_ksize": 11,
+        "bow": 0.35,
+        "thickness": 3,
+        "use_shape_prior": 1,
+        "shape_method": "close",
+        "shape_close_ksize": 31,
+        "shape_occluder_dilate": 9,
+        "fill_mode": "nn_cover",
+        "mask_expand": 3
+      },
+      "http_status": 200,
+      "elapsed_seconds": 3.99,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "001_原图1_filled_id.png",
+        "001_原图1_filled_color.png",
+        "001_原图1_filled_overlay.png",
+        "001_原图1_added_mask.png",
+        "001_原图1_reconstruct.png",
+        "001_原图1_occlusion.json",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt",
+        "002_原图2_filled_id.png",
+        "002_原图2_filled_color.png",
+        "002_原图2_filled_overlay.png",
+        "002_原图2_added_mask.png",
+        "002_原图2_reconstruct.png",
+        "002_原图2_occlusion.json"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_id.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_color.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_added_mask.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_reconstruct.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_id.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_color.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_added_mask.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_reconstruct.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 7.57%\n导线: 1.25%\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.68%\n导线: 2.70%\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 239024,
+              "area_ratio_percent": 91.18042
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 19846,
+              "area_ratio_percent": 7.570648
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 3274,
+              "area_ratio_percent": 1.248932
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "001_原图1_occlusion.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "geometry_parameters": {
+            "background_id": 0,
+            "corridor_width": 5,
+            "max_gap_dist": 50.0,
+            "other_ratio_th": 0.35,
+            "closing_ksize": 11,
+            "bow": 0.35,
+            "thickness": 3,
+            "use_shape_prior": true,
+            "shape_method": "close",
+            "shape_close_ksize": 31,
+            "shape_occluder_dilate": 9
+          },
+          "fill_mode": "nn_cover",
+          "mask_expand": 3,
+          "changed_mask_pixels": 1343,
+          "classes_after_fill": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 238926,
+              "area_ratio_percent": 91.143036
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 21116,
+              "area_ratio_percent": 8.055115
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 2102,
+              "area_ratio_percent": 0.801849
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ],
+          "note": "遮挡补全属于算法推断，不代表原始巡检图像的真实可见内容。"
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175323,
+              "area_ratio_percent": 78.625821
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41648,
+              "area_ratio_percent": 18.677573
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6013,
+              "area_ratio_percent": 2.696606
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_occlusion.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "geometry_parameters": {
+            "background_id": 0,
+            "corridor_width": 5,
+            "max_gap_dist": 50.0,
+            "other_ratio_th": 0.35,
+            "closing_ksize": 11,
+            "bow": 0.35,
+            "thickness": 3,
+            "use_shape_prior": true,
+            "shape_method": "close",
+            "shape_close_ksize": 31,
+            "shape_occluder_dilate": 9
+          },
+          "fill_mode": "nn_cover",
+          "mask_expand": 3,
+          "changed_mask_pixels": 14,
+          "classes_after_fill": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175310,
+              "area_ratio_percent": 78.619991
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41662,
+              "area_ratio_percent": 18.683852
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6012,
+              "area_ratio_percent": 2.696158
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ],
+          "note": "遮挡补全属于算法推断，不代表原始巡检图像的真实可见内容。"
+        }
+      }
+    },
+    {
+      "label": "xception-seven-ids",
+      "algorithm": "deeplabv3",
+      "args": {
+        "model_name": "last_epoch_weights.pth",
+        "device": "cpu"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 28.24,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n类别0: 90.94%\n类别1: 8.37%\n类别2: 0.02%\n类别3: 0.67%\n类别名称尚未提供，当前仅输出类别 ID，不代表已确认的部件名称。\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n类别0: 80.20%\n类别1: 18.06%\n类别2: 0.06%\n类别3: 1.68%\n类别名称尚未提供，当前仅输出类别 ID，不代表已确认的部件名称。\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "last_epoch_weights.pth",
+          "backbone": "xception",
+          "num_classes": 7,
+          "class_names": [
+            "类别0",
+            "类别1",
+            "类别2",
+            "类别3",
+            "类别4",
+            "类别5",
+            "类别6"
+          ],
+          "class_names_verified": false,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "类别0",
+              "pixels": 238393,
+              "area_ratio_percent": 90.939713
+            },
+            {
+              "class_id": 1,
+              "class_name": "类别1",
+              "pixels": 21953,
+              "area_ratio_percent": 8.374405
+            },
+            {
+              "class_id": 2,
+              "class_name": "类别2",
+              "pixels": 41,
+              "area_ratio_percent": 0.01564
+            },
+            {
+              "class_id": 3,
+              "class_name": "类别3",
+              "pixels": 1757,
+              "area_ratio_percent": 0.670242
+            },
+            {
+              "class_id": 4,
+              "class_name": "类别4",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "类别5",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "类别6",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "last_epoch_weights.pth",
+          "backbone": "xception",
+          "num_classes": 7,
+          "class_names": [
+            "类别0",
+            "类别1",
+            "类别2",
+            "类别3",
+            "类别4",
+            "类别5",
+            "类别6"
+          ],
+          "class_names_verified": false,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "类别0",
+              "pixels": 178840,
+              "area_ratio_percent": 80.203064
+            },
+            {
+              "class_id": 1,
+              "class_name": "类别1",
+              "pixels": 40268,
+              "area_ratio_percent": 18.058695
+            },
+            {
+              "class_id": 2,
+              "class_name": "类别2",
+              "pixels": 132,
+              "area_ratio_percent": 0.059197
+            },
+            {
+              "class_id": 3,
+              "class_name": "类别3",
+              "pixels": 3744,
+              "area_ratio_percent": 1.679044
+            },
+            {
+              "class_id": 4,
+              "class_name": "类别4",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "类别5",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "类别6",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "legacy-deeplab-args",
+      "algorithm": "deeplabv3",
+      "args": {
+        "model_name": "电气设备语义分割模型.pt"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 4.41,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 7.57%\n导线: 1.25%\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.72%\n导线: 2.71%\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "电气设备语义分割模型.pt",
+          "backbone": "legacy",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 239024,
+              "area_ratio_percent": 91.18042
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 19846,
+              "area_ratio_percent": 7.570648
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 3274,
+              "area_ratio_percent": 1.248932
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "电气设备语义分割模型.pt",
+          "backbone": "legacy",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175202,
+              "area_ratio_percent": 78.571557
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41749,
+              "area_ratio_percent": 18.722868
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6033,
+              "area_ratio_percent": 2.705575
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "unicode-nested-duplicate-names",
+      "algorithm": "deeplabv3",
+      "args": {
+        "model_name": "语义增强"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 4.41,
+      "status": "passed",
+      "files": [
+        "001_巡检_pred.png",
+        "001_巡检_seg.png",
+        "001_巡检_overlay.png",
+        "001_巡检_statistics.json",
+        "001_巡检_statistics.txt",
+        "002_巡检_pred.png",
+        "002_巡检_seg.png",
+        "002_巡检_overlay.png",
+        "002_巡检_statistics.json",
+        "002_巡检_statistics.txt"
+      ],
+      "images": {
+        "001_巡检_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_巡检_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_巡检_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_巡检_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_巡检_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_巡检_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_巡检_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 8.38%\n导线: 1.01%\n",
+        "002_巡检_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.30%\n杆塔: 0.01%\n导线: 2.61%\n"
+      },
+      "summaries": {
+        "001_巡检_statistics.json": {
+          "model_name": "语义增强",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "组一/巡检.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 237511,
+              "area_ratio_percent": 90.603256
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 21978,
+              "area_ratio_percent": 8.383942
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 2655,
+              "area_ratio_percent": 1.012802
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_巡检_statistics.json": {
+          "model_name": "语义增强",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "组二/巡检.PNG",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 176331,
+              "area_ratio_percent": 79.077871
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 40809,
+              "area_ratio_percent": 18.301313
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 33,
+              "area_ratio_percent": 0.014799
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 5811,
+              "area_ratio_percent": 2.606017
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "occlusion-fill-avg_soft",
+      "algorithm": "遮挡关系融合骨架",
+      "args": {
+        "fill_mode": "avg_soft"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 3.84,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "001_原图1_filled_id.png",
+        "001_原图1_filled_color.png",
+        "001_原图1_filled_overlay.png",
+        "001_原图1_added_mask.png",
+        "001_原图1_reconstruct.png",
+        "001_原图1_occlusion.json",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt",
+        "002_原图2_filled_id.png",
+        "002_原图2_filled_color.png",
+        "002_原图2_filled_overlay.png",
+        "002_原图2_added_mask.png",
+        "002_原图2_reconstruct.png",
+        "002_原图2_occlusion.json"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_id.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_color.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_added_mask.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_reconstruct.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_id.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_color.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_added_mask.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_reconstruct.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 7.57%\n导线: 1.25%\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.68%\n导线: 2.70%\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 239024,
+              "area_ratio_percent": 91.18042
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 19846,
+              "area_ratio_percent": 7.570648
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 3274,
+              "area_ratio_percent": 1.248932
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "001_原图1_occlusion.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "geometry_parameters": {
+            "background_id": 0,
+            "corridor_width": 5,
+            "max_gap_dist": 50.0,
+            "other_ratio_th": 0.35,
+            "closing_ksize": 11,
+            "bow": 0.35,
+            "thickness": 3,
+            "use_shape_prior": true,
+            "shape_method": "close",
+            "shape_close_ksize": 31,
+            "shape_occluder_dilate": 9
+          },
+          "fill_mode": "avg_soft",
+          "mask_expand": 3,
+          "changed_mask_pixels": 1343,
+          "classes_after_fill": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 238926,
+              "area_ratio_percent": 91.143036
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 21116,
+              "area_ratio_percent": 8.055115
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 2102,
+              "area_ratio_percent": 0.801849
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ],
+          "note": "遮挡补全属于算法推断，不代表原始巡检图像的真实可见内容。"
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175323,
+              "area_ratio_percent": 78.625821
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41648,
+              "area_ratio_percent": 18.677573
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6013,
+              "area_ratio_percent": 2.696606
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_occlusion.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "geometry_parameters": {
+            "background_id": 0,
+            "corridor_width": 5,
+            "max_gap_dist": 50.0,
+            "other_ratio_th": 0.35,
+            "closing_ksize": 11,
+            "bow": 0.35,
+            "thickness": 3,
+            "use_shape_prior": true,
+            "shape_method": "close",
+            "shape_close_ksize": 31,
+            "shape_occluder_dilate": 9
+          },
+          "fill_mode": "avg_soft",
+          "mask_expand": 3,
+          "changed_mask_pixels": 14,
+          "classes_after_fill": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175310,
+              "area_ratio_percent": 78.619991
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41662,
+              "area_ratio_percent": 18.683852
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6012,
+              "area_ratio_percent": 2.696158
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ],
+          "note": "遮挡补全属于算法推断，不代表原始巡检图像的真实可见内容。"
+        }
+      }
+    },
+    {
+      "label": "occlusion-fill-shift",
+      "algorithm": "遮挡关系融合骨架",
+      "args": {
+        "fill_mode": "shift"
+      },
+      "http_status": 200,
+      "elapsed_seconds": 3.92,
+      "status": "passed",
+      "files": [
+        "001_原图1_pred.png",
+        "001_原图1_seg.png",
+        "001_原图1_overlay.png",
+        "001_原图1_statistics.json",
+        "001_原图1_statistics.txt",
+        "001_原图1_filled_id.png",
+        "001_原图1_filled_color.png",
+        "001_原图1_filled_overlay.png",
+        "001_原图1_added_mask.png",
+        "001_原图1_reconstruct.png",
+        "001_原图1_occlusion.json",
+        "002_原图2_pred.png",
+        "002_原图2_seg.png",
+        "002_原图2_overlay.png",
+        "002_原图2_statistics.json",
+        "002_原图2_statistics.txt",
+        "002_原图2_filled_id.png",
+        "002_原图2_filled_color.png",
+        "002_原图2_filled_overlay.png",
+        "002_原图2_added_mask.png",
+        "002_原图2_reconstruct.png",
+        "002_原图2_occlusion.json"
+      ],
+      "images": {
+        "001_原图1_pred.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_seg.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_id.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_color.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_filled_overlay.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_added_mask.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "001_原图1_reconstruct.png": {
+          "size": [
+            512,
+            512
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_pred.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_seg.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_id.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_color.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_filled_overlay.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_added_mask.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        },
+        "002_原图2_reconstruct.png": {
+          "size": [
+            489,
+            456
+          ],
+          "format": "PNG"
+        }
+      },
+      "texts": {
+        "001_原图1_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 7.57%\n导线: 1.25%\n",
+        "002_原图2_statistics.txt": "Detected Classes and Area Ratio:\n绝缘子: 18.68%\n导线: 2.70%\n"
+      },
+      "summaries": {
+        "001_原图1_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 239024,
+              "area_ratio_percent": 91.18042
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 19846,
+              "area_ratio_percent": 7.570648
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 3274,
+              "area_ratio_percent": 1.248932
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "001_原图1_occlusion.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图1.png",
+          "image_size": [
+            512,
+            512
+          ],
+          "geometry_parameters": {
+            "background_id": 0,
+            "corridor_width": 5,
+            "max_gap_dist": 50.0,
+            "other_ratio_th": 0.35,
+            "closing_ksize": 11,
+            "bow": 0.35,
+            "thickness": 3,
+            "use_shape_prior": true,
+            "shape_method": "close",
+            "shape_close_ksize": 31,
+            "shape_occluder_dilate": 9
+          },
+          "fill_mode": "shift",
+          "mask_expand": 3,
+          "changed_mask_pixels": 1343,
+          "classes_after_fill": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 238926,
+              "area_ratio_percent": 91.143036
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 21116,
+              "area_ratio_percent": 8.055115
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 2102,
+              "area_ratio_percent": 0.801849
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ],
+          "note": "遮挡补全属于算法推断，不代表原始巡检图像的真实可见内容。"
+        },
+        "002_原图2_statistics.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "classes": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175323,
+              "area_ratio_percent": 78.625821
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41648,
+              "area_ratio_percent": 18.677573
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6013,
+              "area_ratio_percent": 2.696606
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ]
+        },
+        "002_原图2_occlusion.json": {
+          "model_name": "deeplabv3_plus.pth",
+          "backbone": "mobilenet",
+          "num_classes": 8,
+          "class_names": [
+            "background",
+            "绝缘子",
+            "杆塔",
+            "导线",
+            "杆塔脚钉",
+            "销钉",
+            "悬垂线夹",
+            "防震锤"
+          ],
+          "class_names_verified": true,
+          "input_shape": [
+            512,
+            512
+          ],
+          "device": "cpu",
+          "source_name": "原图2.png",
+          "image_size": [
+            489,
+            456
+          ],
+          "geometry_parameters": {
+            "background_id": 0,
+            "corridor_width": 5,
+            "max_gap_dist": 50.0,
+            "other_ratio_th": 0.35,
+            "closing_ksize": 11,
+            "bow": 0.35,
+            "thickness": 3,
+            "use_shape_prior": true,
+            "shape_method": "close",
+            "shape_close_ksize": 31,
+            "shape_occluder_dilate": 9
+          },
+          "fill_mode": "shift",
+          "mask_expand": 3,
+          "changed_mask_pixels": 14,
+          "classes_after_fill": [
+            {
+              "class_id": 0,
+              "class_name": "background",
+              "pixels": 175310,
+              "area_ratio_percent": 78.619991
+            },
+            {
+              "class_id": 1,
+              "class_name": "绝缘子",
+              "pixels": 41662,
+              "area_ratio_percent": 18.683852
+            },
+            {
+              "class_id": 2,
+              "class_name": "杆塔",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 3,
+              "class_name": "导线",
+              "pixels": 6012,
+              "area_ratio_percent": 2.696158
+            },
+            {
+              "class_id": 4,
+              "class_name": "杆塔脚钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 5,
+              "class_name": "销钉",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 6,
+              "class_name": "悬垂线夹",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            },
+            {
+              "class_id": 7,
+              "class_name": "防震锤",
+              "pixels": 0,
+              "area_ratio_percent": 0.0
+            }
+          ],
+          "note": "遮挡补全属于算法推断，不代表原始巡检图像的真实可见内容。"
+        }
+      }
+    }
+  ],
+  "negative_cases": [
+    {
+      "label": "unsupported-model",
+      "status": "passed",
+      "http_status": 500,
+      "error": "请选择已登记的语义分割模型：best.pt"
+    },
+    {
+      "label": "invalid-fill-mode",
+      "status": "passed",
+      "http_status": 500,
+      "error": "fill_mode 只支持 nn_cover、shift 或 avg_soft"
+    },
+    {
+      "label": "no-input-images",
+      "status": "passed",
+      "http_status": 500,
+      "error": "输入 ZIP 中没有可处理的 JPG、PNG、BMP 或 TIFF 图片"
+    },
+    {
+      "label": "corrupt-image",
+      "status": "passed",
+      "http_status": 500,
+      "error": "无法读取输入图片 损坏.png：cannot identify image file <_io.BytesIO object at 0x0000019C4004B330>"
+    },
+    {
+      "label": "unmapped-occlusion-taxonomy",
+      "status": "passed",
+      "http_status": 500,
+      "error": "遮挡补全需要确认类别 0 为背景；该模型请先使用 deeplabv3 输出类别 ID，或补充训练类别表"
+    }
+  ],
+  "samples": [
+    {
+      "name": "原图1.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "169c3aadc3158eae288dc6d96e60020970ccb244c133f68d322f8611b9d6df61"
+    },
+    {
+      "name": "原图2.png",
+      "size": [
+        489,
+        456
+      ],
+      "sha256": "c5cac3f960dc7ba1d5230d1f62e2b74b71881064eaf658ab2ff655427ce6e9a2"
+    }
+  ],
+  "scope": "Runtime/output/source-fidelity checks on supplied inspection images; no accuracy metrics or GPU verification; no business task records created.",
+  "source_fidelity": {
+    "network_sources_identical": true,
+    "geometry_and_texture_functions_identical": true,
+    "original_predict_pixels_identical": true,
+    "input_count": 2
+  },
+  "running_tasks_after": {
+    "running_tasks": []
+  },
+  "finished_at": "2026-10-14T18:47:26.721143+08:00",
+  "passed": true,
+  "backend_proxy": {
+    "platform_id": 21,
+    "algorithms": [
+      "algorithm",
+      "deeplabv3",
+      "去雨后增强处理",
+      "去雾恢复",
+      "曝光校正与细节恢复",
+      "电气设备缺陷检测模型算法",
+      "电气设备语义分割模型算法",
+      "逆光&曝光处理",
+      "雨天图像处理",
+      "语义增强",
+      "遮挡关系融合骨架"
+    ],
+    "models": [
+      "best.pt",
+      "电气设备语义分割模型.pt",
+      "deeplabv3_plus.pth",
+      "语义增强",
+      "last_epoch_weights.pth"
+    ],
+    "passed": true
+  },
+  "frontend_http_status": 200,
+  "tested_file_sha256": {
+    "frontend\\src\\views\\task\\task\\index.vue": "14c1763e64c2471727cf931134c0170ea7fd699dfd550fbed8d2f9ed1ac7bf64",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\algorithm.py": "859956712ce3da0e1c54206705ed8d4c4e30903bc3022f362dff8932b6fbb7b3",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\deeplabv3.py": "835e5c15c05f2213b3b3fe22930bc88e8bce15334d62f2bf01169da9a8bd5ebb",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\去雨后增强处理.py": "4c2739e8b87205dac203846f54fd2627e6094f79edb6d06e2dda51bec68c5216",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\去雾恢复.py": "2e6c7ad5d3994f66ef3bfdb35986d282c0dd331fe0f455289de4bec5ba7b9eb7",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\曝光校正与细节恢复.py": "f3a36f42be9d701d19e11aafe5b90da88077b313d4948e296763ad48cc83febc",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\电气设备缺陷检测模型算法.py": "de142511f1c27ec1f3eedca7aa0d076d1185d6595e238f531b8f0806e702ffb0",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\电气设备语义分割模型算法.py": "1fdab4116cc37b2ba8fb17b30253dade3d21ec5ee37498c13952f578488457d5",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\语义增强.py": "191e23fbe45b2f0b51fa2603c271cb716932dc2e8dc90e6b496cd27138aa5ee7",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\逆光&曝光处理.py": "7a61d81a862b5ccbbddbe5c840a32478856e7eb3099f88ce2c090d5b2aad6582",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\遮挡关系融合骨架.py": "2af4a59e609113257b3a9c8d211a3184f6ff254884e7de0c7db3cc3a1dfd39d9",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo\\雨天图像处理.py": "e2ff41835c2152476e2def26a69149f980cb87da4db2652946658bfd3b9e5c38",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo_support\\__init__.py": "9a2a39e3f8658714c560853c48fddc04934e20b30d5a213303dc5e09d33704a5",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo_support\\image_io.py": "69b7580091f27bfe52c540c391d20e083f52d11550783cd1a6ad8f103fa9aff5",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo_support\\occlusion.py": "89d4bae7e5e6af8206b62a5a7ae189be615c75db6db95438a7e2d60fcaa6a9ec",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo_support\\reconstruction.py": "d50d4ab3a71ff9c8bd8d67e0115aa479cb571ef3920ab3cd81d1a308c45b9f9f",
+    "Intelligent Detection System for Transmission Line Defects-server\\algo_support\\segmentation.py": "eb956c96a39c8535cdd039add637abd55a10556cab07a47fbf41ab9e2ed86fa3",
+    "Intelligent Detection System for Transmission Line Defects-server\\config.yaml": "8bf39d8b60e40e32f2a626111b4b70646f1a8de8c6845cdf1e4034082470b498",
+    "Intelligent Detection System for Transmission Line Defects-server\\model_config.yaml": "05e657c62076a4b41b2c6383ba0c039c2d996ca4f356846dd328a59614790a03"
+  },
+  "frontend_parameters": {
+    "checked_at": "2026-10-14T10:37:34.750Z",
+    "passed": true,
+    "algorithms": [
+      "algorithm",
+      "deeplabv3",
+      "去雨后增强处理",
+      "去雾恢复",
+      "曝光校正与细节恢复",
+      "电气设备缺陷检测模型算法",
+      "电气设备语义分割模型算法",
+      "逆光&曝光处理",
+      "雨天图像处理",
+      "语义增强",
+      "遮挡关系融合骨架"
+    ],
+    "legacy_fallback": true
+  },
+  "frontend_production_build": {
+    "passed": true,
+    "command": "D:\\tool\\nodejs\\node.exe node_modules/vite/bin/vite.js build",
+    "exit_code": 0
+  }
+}

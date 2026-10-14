@@ -5,3 +5,74 @@ models:
   电气设备语义分割模型.pt:
     file: model/电气设备语义分割模型.pt
     intro: 这是一个电气设备语义分割模型，用于对无人机图像中的电气设备进行像素级分割识别。
+    task: segmentation
+    checkpoint_format: full_module
+    num_classes: 8
+    class_names:
+    - background
+    - 绝缘子
+    - 杆塔
+    - 导线
+    - 杆塔脚钉
+    - 销钉
+    - 悬垂线夹
+    - 防震锤
+    class_names_verified: true
+    input_shape:
+    - 512
+    - 512
+  deeplabv3_plus.pth:
+    file: model/deeplabv3_plus.pth
+    intro: 随包 ep020 的 DeepLabV3+ / MobileNetV2 八类别部件分割权重。
+    task: segmentation
+    checkpoint_format: state_dict
+    backbone: mobilenet
+    num_classes: 8
+    downsample_factor: 16
+    input_shape:
+    - 512
+    - 512
+    class_names:
+    - background
+    - 绝缘子
+    - 杆塔
+    - 导线
+    - 杆塔脚钉
+    - 销钉
+    - 悬垂线夹
+    - 防震锤
+    class_names_verified: true
+  语义增强:
+    file: model/ep025-loss0.131-val_loss0.225.pth
+    intro: 随包 ep025 训练权重；按随包 DeepLabV3+ / MobileNetV2 网络进行八类别推理。
+    task: segmentation
+    checkpoint_format: state_dict
+    backbone: mobilenet
+    num_classes: 8
+    downsample_factor: 16
+    input_shape:
+    - 512
+    - 512
+    class_names:
+    - background
+    - 绝缘子
+    - 杆塔
+    - 导线
+    - 杆塔脚钉
+    - 销钉
+    - 悬垂线夹
+    - 防震锤
+    class_names_verified: true
+  last_epoch_weights.pth:
+    file: model/last_epoch_weights.pth
+    intro: 随包 DeepLabV3+ / Xception 七类别权重；类别名称未提供，结果按类别 ID 输出。
+    task: segmentation
+    checkpoint_format: state_dict
+    backbone: xception
+    num_classes: 7
+    downsample_factor: 16
+    input_shape:
+    - 512
+    - 512
+    class_names: []
+    class_names_verified: false

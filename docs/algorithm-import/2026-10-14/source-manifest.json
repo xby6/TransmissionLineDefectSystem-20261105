@@ -1,0 +1,97 @@
+{
+  "created_at": "2026-10-14T18:25:08.658216+08:00",
+  "baseline_commit": "20887046ed34a3596d292626980e4801784bd9e6",
+  "manual": "7-1-3-复杂背景下输电线路关键部件精准识别与缺陷智能检测研究-使用说明文档-沈阳农业大学 .pdf",
+  "manual_evidence_pages": [
+    10,
+    17,
+    20
+  ],
+  "archives": [
+    {
+      "file": "打包文件(1).rar",
+      "bytes": 44427254,
+      "sha256": "1ff4c4cca3da2cc1e27d2a126e780864b6da86ee0f7f9edba10f3e582925d41c"
+    },
+    {
+      "file": "遮挡关系融合骨架(1).rar",
+      "bytes": 808818602,
+      "sha256": "00f8cfb04acb656620db17fa2a6ebd43a9aa120949ef252c5f65dd373c7de74c"
+    }
+  ],
+  "source_files": [
+    {
+      "source": "segmentation\\打包文件\\deeplabv3_plus.py",
+      "sha256": "b8818ef2f42de1117bfc03aa6230ed67999a106cca4d688ddab35e29eba2f0df"
+    },
+    {
+      "source": "segmentation\\打包文件\\predict.py",
+      "sha256": "3edcb6944947a23f493b885d7b00b8147751927c568320d528f9da372024bb2f"
+    },
+    {
+      "source": "segmentation\\打包文件\\readme.md",
+      "sha256": "21288089420a254b2edae29a965bd24061f56e08e502498a6d46c61fd0192270"
+    },
+    {
+      "source": "occlusion\\遮挡关系融合骨架\\config.yaml",
+      "sha256": "e4ae8c7c94a5cfe3fa87f1144a05dbd45831b9b5285f9d13e3ab6fee0915fb1f"
+    },
+    {
+      "source": "occlusion\\遮挡关系融合骨架\\infer.py",
+      "sha256": "bd8fe25cd73088adb90148bdd9e6661ed19b5b072a2d707623b6dceb84184755"
+    },
+    {
+      "source": "occlusion\\遮挡关系融合骨架\\postprocess.py",
+      "sha256": "178e59948e86ea12d05021211239038fe7f59624cbe83a3329a924a075419660"
+    },
+    {
+      "source": "occlusion\\遮挡关系融合骨架\\apply_filled_to_image.py",
+      "sha256": "8b1e0ca6fdffe02d7a580728a32f8491801fbd1e1c1219027c35338245948194"
+    },
+    {
+      "source": "occlusion\\遮挡关系融合骨架\\nets\\mobilenetv2.py",
+      "sha256": "ac49803a7acd54d12df110f73289ae3835ab0f3b2ec1ab533bb653adf9ad0def"
+    },
+    {
+      "source": "occlusion\\遮挡关系融合骨架\\nets\\xception.py",
+      "sha256": "636b347395a2392d55e8f829ff71b381d1445bc1cb70c3e3ba881bbe3debf3b4"
+    }
+  ],
+  "imported_weights": [
+    {
+      "file": "Intelligent Detection System for Transmission Line Defects-server\\model\\deeplabv3_plus.pth",
+      "bytes": 23540031,
+      "sha256": "c9bd2d5c49d23bf18e1629643b40d982f451f5bc958a8ed43391b15e169f3f0b"
+    },
+    {
+      "file": "Intelligent Detection System for Transmission Line Defects-server\\model\\ep025-loss0.131-val_loss0.225.pth",
+      "bytes": 23540031,
+      "sha256": "079fcddf0604b54718abc6c8b6092751d83112b796957b3648d80a9739e4b537"
+    },
+    {
+      "file": "Intelligent Detection System for Transmission Line Defects-server\\model\\last_epoch_weights.pth",
+      "bytes": 219901410,
+      "sha256": "a3f7602213f10ea807495631e3407538399d68d9b702e9186fefb26e25999f31"
+    }
+  ],
+  "deduplicated_ep020_sources": [
+    "打包文件/ep020-loss0.143-val_loss0.219.pth",
+    "遮挡关系融合骨架/weights/deeplabv3_plus.pth",
+    "遮挡关系融合骨架/weights/ep020-loss0.143-val_loss0.219.pth"
+  ],
+  "reused_identical_network_files": [
+    "nets/deeplabv3_plus.py",
+    "nets/mobilenetv2.py",
+    "nets/xception.py"
+  ],
+  "not_found_in_archives": [
+    "去雨后增强处理源码",
+    "去雾恢复源码",
+    "曝光校正与细节恢复源码",
+    "缺陷检测源码及 best.pt",
+    "逆光&曝光处理独立源码",
+    "雨天图像处理独立源码"
+  ],
+  "class_mapping_notes": "Eight-class names follow supplied predict.py. Comments in the skeleton palette use a conflicting order and are not used to assign class names. The seven-class Xception weight has no supplied class-name map and is exposed using numerical IDs.",
+  "ep025_notes": "Archive README calls this a dual-branch trained weight. The supplied inference network and parameter keys match DeepLabV3+ MobileNetV2; no missing training architecture is invented."
+}

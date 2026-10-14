@@ -25,11 +25,17 @@ PostgreSQL 15 数据库 `init` 和 Redis 使用本机已有服务。启动器将
 
 - `frontend/`：Vue 前端，使用 npm 和 package-lock.json。
 - `backend/`：FastAPI 业务服务、系统管理、SQL 初始结构。
-- `Intelligent Detection System for Transmission Line Defects-server/`：算法平台、自定义模型实现、两个原模型权重。
+- `Intelligent Detection System for Transmission Line Defects-server/`：算法平台、自定义模型实现、原模型与新增分割权重。
 - `scripts/`：数据库迁移与验收脚本，日常启动不需要执行数据库迁移。
 - `docs/verification/`：恢复阶段的验收记录和截图。
 - `系统恢复说明.md`：恢复内容、已验证功能及 PDF 差异。
 - `Git备份与恢复说明.md`：版本标签、误删文件恢复、整套代码恢复和配套数据备份位置。
+
+## 算法接入
+
+2026-10-14 已按说明文档核对可辨认的八个算法入口，并接入提供的 DeepLab 权重、语义增强和遮挡补全流程。创建任务时选择“本地输电线路算法平台”，新增入口和默认参数会自动加载。
+
+来源、接口、结果格式、验收记录及材料缺口见 [算法接入说明](docs/算法接入说明.md)。七类别 Xception 权重缺少类别名称表，当前按类别 ID 输出结果。
 
 ## 重新安装依赖
 

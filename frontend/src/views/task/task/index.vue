@@ -1902,12 +1902,13 @@ function validateAndProcessAlgorithmParams(algoInfo) {
   }
 
   try {
-    if (algoInfo.intro && typeof algoInfo.intro === 'string') {
-      if (algoInfo.intro.trim().startsWith('{')) {
-        result.parameters_intro = JSON.parse(algoInfo.intro);
+    const parameterIntro = algoInfo.args_intro || algoInfo.intro;
+    if (parameterIntro && typeof parameterIntro === 'string') {
+      if (parameterIntro.trim().startsWith('{')) {
+        result.parameters_intro = JSON.parse(parameterIntro);
       } else {
         Object.keys(result.parameters).forEach(key => {
-          result.parameters_intro[key] = algoInfo.intro;
+          result.parameters_intro[key] = parameterIntro;
         });
       }
     }
