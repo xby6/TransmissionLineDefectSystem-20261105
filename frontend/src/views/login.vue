@@ -125,13 +125,14 @@ function handleLogin() {
           }
           return acc;
         }, {});
-        router.push({ path: redirect.value || "/", query: otherQueryParams });
+        return router.push({ path: redirect.value || "/", query: otherQueryParams });
       }).catch(() => {
-        loading.value = false;
         // 重新获取验证码
         if (captchaEnabled.value) {
           getCode();
         }
+      }).finally(() => {
+        loading.value = false;
       });
     }
   });

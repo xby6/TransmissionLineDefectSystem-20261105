@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
         // 判断当前用户是否已拉取完user_info信息
         useUserStore().getInfo().then(() => {
           isRelogin.show = false
-          usePermissionStore().generateRoutes().then(accessRoutes => {
+          return usePermissionStore().generateRoutes().then(accessRoutes => {
             // 根据roles权限生成可访问的路由表
             accessRoutes.forEach(route => {
               if (!isHttp(route.path)) {
@@ -43,9 +43,10 @@ router.beforeEach((to, from, next) => {
             next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
           })
         }).catch(err => {
-          useUserStore().logOut().then(() => {
+          useUserStore().logOut().catch(() => {}).then(() => {
+            isRelogin.show = false
             ElMessage.error(err)
-            next({ path: '/' })
+            next({ path: '/login', query: { redirect: to.fullPath } })
           })
         })
       } else {
@@ -66,4 +67,10 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
   NProgress.done()
+})
+
+router.onError(() => {
+  isRelogin.show = false
+  NProgress.done()
+  ElMessage.error('页面加载失败，请刷新后重试')
 })

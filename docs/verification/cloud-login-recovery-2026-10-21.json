@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-21",
+  "browser": "Isolated Playwright-controlled Microsoft Edge; built-in browser interaction was unavailable",
+  "normal_login": {
+    "frontend": "fixed production build served on localhost:4178",
+    "backend": "live ECS at 47.238.193.145:8088",
+    "status": "passed; dashboard populated from real API"
+  },
+  "fault_injection": {
+    "before": [
+      {
+        "scenario": "menu-failure",
+        "url": "http://47.238.193.145:8088/login?redirect=/index",
+        "loginButtonStuck": true,
+        "tokenCleared": false,
+        "errors": [
+          "验收模拟：菜单服务暂不可用"
+        ]
+      },
+      {
+        "scenario": "expired-session-logout-failure",
+        "url": "http://47.238.193.145:8088/login?redirect=/index",
+        "loginButtonStuck": true,
+        "tokenCleared": false,
+        "errors": [
+          "无效的会话，或者会话已过期，请重新登录。"
+        ]
+      }
+    ],
+    "after": [
+      {
+        "scenario": "menu-failure",
+        "url": "http://127.0.0.1:4178/login?redirect=/index",
+        "loginButtonStuck": false,
+        "tokenCleared": true,
+        "errors": []
+      },
+      {
+        "scenario": "expired-session-logout-failure",
+        "url": "http://127.0.0.1:4178/login?redirect=/index",
+        "loginButtonStuck": false,
+        "tokenCleared": true,
+        "errors": []
+      }
+    ]
+  },
+  "production_build": "passed; 2387 modules transformed",
+  "deployment_status": "local fix verified; cloud frontend update pending"
+}
