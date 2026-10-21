@@ -953,11 +953,15 @@ async function uploadFolderRecursively(parentFolderId) {
   const totalFiles = files.length;
   let uploadedCount = 0;
   const folderStructure = buildFolderStructure(files);
+  const uploadProgress = { uploadedCount: 0, processedCount: 0, failedFiles: [] };
   try {
     await processFolderStructure(parentFolderId, folderStructure, (progress) => {
       uploadedCount = progress.uploadedCount;
-      batchUploadProgress.value = Math.round((uploadedCount / totalFiles) * 100);
-    });
+      batchUploadProgress.value = Math.round((progress.processedCount / totalFiles) * 100);
+    }, uploadProgress);
+    if (uploadProgress.failedFiles.length > 0) {
+      throw new Error(`${uploadProgress.failedFiles.length} 个文件上传失败，已成功上传 ${uploadedCount} 个文件`);
+    }
     batchUploadProgress.value = 100;
     batchUploadStatus.value = 'success';
     proxy.$modal.msgSuccess(`文件夹上传完成，共上传 ${uploadedCount} 个文件`);
@@ -1011,31 +1015,24 @@ function buildFolderStructure(files) {
 }
 
 // 递归处理文件夹结构
-async function processFolderStructure(parentId, structure, progressCallback) {
-  let uploadedCount = 0;
-  
+async function processFolderStructure(parentId, structure, progressCallback, progress) {
   for (const file of structure.files) {
     try {
       await uploadFileToFolder(parentId, file);
-      uploadedCount++;
-      progressCallback({ uploadedCount });
-
-      await delay(500); 
+      progress.uploadedCount++;
     } catch (error) {
       console.error(`文件 ${file.name} 上传失败:`, error);
-      uploadedCount++;
-      progressCallback({ uploadedCount });
+      progress.failedFiles.push(file.name);
     }
+    progress.processedCount++;
+    progressCallback(progress);
+    await delay(500);
   }
   
   // 递归处理子文件夹
   for (const [folderName, subStructure] of Object.entries(structure.folders)) {
-    try {
-      const folderId = await ensureFolderExists(parentId, folderName);
-      await processFolderStructure(folderId, subStructure, progressCallback);
-    } catch (error) {
-      console.error(`创建文件夹 ${folderName} 失败:`, error);
-    }
+    const folderId = await ensureFolderExists(parentId, folderName);
+    await processFolderStructure(folderId, subStructure, progressCallback, progress);
   }
 }
 

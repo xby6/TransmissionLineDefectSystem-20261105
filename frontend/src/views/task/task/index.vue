@@ -113,7 +113,7 @@
       <el-table-column label="操作" align="center" fixed="right" width="210" class-name="small-padding fixed-width">
         <template #default="scope">
           <el-button link type="primary" icon="VideoPlay" @click="handleExecute(scope.row)"
-            :disabled="scope.row.state === 'running'" v-hasPermi="['task:task:execute']">执行</el-button>
+            :disabled="['queued', 'running'].includes(scope.row.state)" v-hasPermi="['task:task:execute']">执行</el-button>
           <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)"
             v-hasPermi="['task:task:edit']">修改</el-button>
           <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)"
@@ -1312,7 +1312,7 @@ function handleUpdate(row) {
     if (form.value.container) {
       loadAlgorithms(form.value.container).then(() => {
         if (form.value.algo) {
-          onAlgorithmSelect();
+          onAlgorithmSelect(true);
         }
       });
     }
@@ -1321,10 +1321,13 @@ function handleUpdate(row) {
 
 /** 执行任务 */
 function handleExecute(row) {
-  if (row.state === 'running') {
-    proxy.$modal.msgWarning('任务正在执行中，请勿重复执行');
+  if (['queued', 'running'].includes(row.state)) {
+    proxy.$modal.msgWarning('任务已排队或正在执行，请勿重复提交');
     return;
   }
+
+  const previousState = row.state;
+  const previousResult = row.result;
 
   proxy.$modal.confirm('确认要执行任务 "' + row.name + '" 吗？').then(function () {
     const taskIndex = taskList.value.findIndex(item => item.id === row.id);
@@ -1344,15 +1347,18 @@ function handleExecute(row) {
       proxy.$modal.msgError("任务执行失败: " + (response.msg || '未知错误'));
       const taskIndex = taskList.value.findIndex(item => item.id === row.id);
       if (taskIndex !== -1) {
-        taskList.value[taskIndex].state = 'failed';
+        taskList.value[taskIndex].state = previousState;
+        taskList.value[taskIndex].result = previousResult;
       }
     }
   }).catch((error) => {
+    if (error === 'cancel' || error === 'close') return;
     const taskIndex = taskList.value.findIndex(item => item.id === row.id);
     if (taskIndex !== -1) {
-      taskList.value[taskIndex].state = 'failed';
+      taskList.value[taskIndex].state = previousState;
+      taskList.value[taskIndex].result = previousResult;
     }
-    proxy.$modal.msgError("任务执行失败");
+    proxy.$modal.msgError("任务提交失败，请刷新确认最新状态");
   });
 }
 
@@ -1557,7 +1563,7 @@ function onContainerChange() {
 }
 
 /** 算法选择后的处理  */
-function onAlgorithmSelect() {
+function onAlgorithmSelect(preserveValues = false) {
   if (!form.value.container || !form.value.algo) return;
   const algoList = containerAlgorithms.value[form.value.container] || [];
   const selectedAlgo = algoList.find(algo => algo.name === form.value.algo);
@@ -1574,7 +1580,7 @@ function onAlgorithmSelect() {
           intro
         };
       });
-      form.value.params = Object.entries(selectedAlgo.parameters)
+      if (preserveValues !== true) form.value.params = Object.entries(selectedAlgo.parameters)
         .filter(([name]) => name !== 'input' && name !== 'Input' && name !== 'INPUT')
         .map(([name, defaultValue]) => {
           return {
@@ -1585,11 +1591,11 @@ function onAlgorithmSelect() {
         });
     } else {
       algorithmParams.value = [];
-      form.value.params = [];
+      if (preserveValues !== true) form.value.params = [];
     }
   } else {
     algorithmParams.value = [];
-    form.value.params = [];
+    if (preserveValues !== true) form.value.params = [];
   }
 }
 /** 根据默认值推断参数类型  */

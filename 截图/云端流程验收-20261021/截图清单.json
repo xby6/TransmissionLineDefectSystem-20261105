@@ -1,0 +1,212 @@
+[
+  {
+    "file": "00-登录页面.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "fc97b4e2917d27048b43e99845dde25e4c3bd5020a941fdbef8a039aeb58dc12"
+  },
+  {
+    "file": "01-首页.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "6639325bc05cf6df5da3f7896bfbeae91bc833b92cc1aba9e48162d67161397c"
+  },
+  {
+    "file": "02-算力平台.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "32e4d84e0008f819c7dde28b4a2cdcfe65a06a61b10ea1d6b76da2d4f9d420a0"
+  },
+  {
+    "file": "03-遥感数据管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "1d80969a36bc30e5e2adaaced55e72894ec954b3ab3e56d247f1ff7aad20e01c"
+  },
+  {
+    "file": "04-任务管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "f5254f490af179a0206eda72fdcfb950a800f2cc37757ba2f88de0ab68df9036"
+  },
+  {
+    "file": "05-用户管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "41499832929d712eceeac22236851432bc8597692d7ecdb1754980b9324313f7"
+  },
+  {
+    "file": "06-角色管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "067ad5d493346e70cbe49a650ca0eedd385981f9c51307e392d9742544e649fc"
+  },
+  {
+    "file": "07-菜单管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "6a4414b83b542de735cb6cc7211e40b572017387a8d6233bdba145591149d165"
+  },
+  {
+    "file": "08-小组管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "21f6ea773c1e2b6e4829e025b83df52821850aee816b91b32d96f4d5459c83b9"
+  },
+  {
+    "file": "09-职责管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "60ff7254ccf0924cff8c4527d3f5589d6fce15870e79b923c6f0783d68743c6e"
+  },
+  {
+    "file": "10-字典管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "c71f59bae0e6c2f1ee7413cfc3aa627d8ac464eec3dd89066333d4fbba687bbe"
+  },
+  {
+    "file": "11-参数设置.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "b82535939993e9cb6169df5f5f3ed270347e83ac21df56440a90248b55fc2659"
+  },
+  {
+    "file": "12-操作日志.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "c32cd758b99fd0bbbd3d4913b40ba1f7c8f72cdfb90aee7fc542941032c155c4"
+  },
+  {
+    "file": "13-登录日志.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "bb43d998dae9a04f6555dbdf621076ed3c1100463981ba3257b9c8a25a3f1d41"
+  },
+  {
+    "file": "14-节点管理.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "bedf3b91ffb607a82aa190e0870a07d7af50ea0e3e2563ebc3ef0c8b2849b0a3"
+  },
+  {
+    "file": "15-在线用户.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "83326489371c2df8bfcf8f01643f809f588e6acc97620148dc5317e26fe4296e"
+  },
+  {
+    "file": "16-服务监控.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "de75ec34306a01bcd6b4d7f33195babbd9d3b1738d3715c87c4254d5e36a2a95"
+  },
+  {
+    "file": "17-缓存监控.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "eb31ae76793025038834659bd10117c954bb6e0a74461b63afa7c896b6a1fea9"
+  },
+  {
+    "file": "18-缓存列表.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "c82793b1f52fd735b358e8c371b98470b7d0dc5165556c0f79894b0894d7e896"
+  },
+  {
+    "file": "19-监测平台.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "8cb27bf5da57ccd7109351b331a175b7e7d5d02f98fcb0629b8eb0c8bff22126"
+  },
+  {
+    "file": "20-通知公告.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "797a8b259eb6944e4429c6039b30052cb43ba0e9d718bd6480fe5639181baf91"
+  },
+  {
+    "file": "21-表单构建.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "b8b23926d2180769b8c0a7cf525f378bb6a244fe8169fadbb7edb8441b69749b"
+  },
+  {
+    "file": "22-代码生成.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "ced52c9b41d6ec6d7a867a4910bc18b69d8b3f26a7ff77e70e106417f94260b1"
+  },
+  {
+    "file": "23-系统接口.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "3c4ad92418987cdf95dcede79e49665e3585155f34271ebbf7973e9b3748e5e0"
+  },
+  {
+    "file": "24-个人中心.png",
+    "scope": "修复后的本机前端，连接真实云端后端",
+    "sha256": "7c6fa184e65e5062dcca5b5409bca739f76334033b48996f56f37559240d4b89"
+  },
+  {
+    "file": "30-model-algorithm-registry.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "a987c733a03e81e1163da3df0505fc6b96db74efd28d2fb2ff388f99cd7e79a6"
+  },
+  {
+    "file": "32-uploaded-test-image.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "7caa147fee42995571123cfd56ee6d50b9c2720006cdc06f11effcdd518c0c57"
+  },
+  {
+    "file": "33-task-platform.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "d2df3e6f30ceb5f04d9c19a74ff109c2a50f25277d788872651e883b70c08150"
+  },
+  {
+    "file": "34-task-algorithm.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "21f9d494aeacbda21fd13978e6740f940298e9e41213bb36235dcd5843f91d3c"
+  },
+  {
+    "file": "35-task-parameters.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "c55aedca372de9eb817ef547f0b1e6dc9bfb1c3f7491a03769858409f54ff6e4"
+  },
+  {
+    "file": "36-task-created.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "657ace8e9e376cc1786e6f6f45bf485a8ea28fc4c7ec47c10f672ff85a51d89f"
+  },
+  {
+    "file": "37-real-inference-completed.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "80a7ced065cd85fd4fc156beb4502e06bd05784257ebabb042cf1fd255921968"
+  },
+  {
+    "file": "38-new-detection-result-preview.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "1591e68bdb1f81912c9724f1d03a240e2e8f5edc6a9a0008530f3cb8d553878f"
+  },
+  {
+    "file": "38-new-detection-result-download.png",
+    "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+    "sha256": "825904913dcc44191433cd8d07800798198d349718f6457dde53c78b06f16ab6"
+  },
+  {
+    "file": "40-node-created-edited.png",
+    "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+    "sha256": "3db22eed4f7d6dd1cdfbeb07665f6537d3d72d9269ec19730d3c0a8623866a61"
+  },
+  {
+    "file": "41-node-export-template.png",
+    "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+    "sha256": "9f51eeca85be8937454948607db16184d8e35d5e352228be6e33d636e217eeee"
+  },
+  {
+    "file": "44-node-deleted.png",
+    "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+    "sha256": "5e0fae9d878f1b48c2fbc0f69f62a3ee22d823a4d8c1403419c38c0f7a69c064"
+  },
+  {
+    "file": "45-api-documentation.png",
+    "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+    "sha256": "3c4ad92418987cdf95dcede79e49665e3585155f34271ebbf7973e9b3748e5e0"
+  },
+  {
+    "file": "46-task-deletion.png",
+    "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+    "sha256": "7f80543ba31267efcc5899688db7854246ee3c577732594c4376f50056e9ddf0"
+  },
+  {
+    "file": "80-取消执行保持原状态.png",
+    "scope": "修复后的本机前端；异常测试使用隔离响应，不改动真实业务记录",
+    "sha256": "94069e63cb888c32d4a976543daf79e625c63920f59c279065227a37ae98ebf8"
+  },
+  {
+    "file": "81-部分上传失败正确提示.png",
+    "scope": "修复后的本机前端；异常测试使用隔离响应，不改动真实业务记录",
+    "sha256": "72a6f9d7d6e21b4808978589b92d7cb7d20b9494bc988d3a40cf27b2eab78619"
+  },
+  {
+    "file": "82-地图自动显示真实节点.png",
+    "scope": "修复后的本机前端；异常测试使用隔离响应，不改动真实业务记录",
+    "sha256": "fabaaa2ef919e11a413de5e5becc5f5ed72f9bc75ebcb49e66933856381075c7"
+  }
+]

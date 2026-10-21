@@ -653,6 +653,7 @@ const fetchDataFromBackend = async () => {
     linesData.value = []
   } finally {
     loading.value = false
+    if (map) showAllLines()
   }
 }
 
@@ -1055,12 +1056,12 @@ const getSampleData = () => {
 
     // 显示所有线路
     const showAllLines = () => {
+      clearAllLayers()
       if (linesData.value.length === 0) {
         console.warn('没有线路数据可显示')
         return
       }
       
-      clearAllLayers()
       console.log('显示所有线路')
       
       let allFeatures = []

@@ -1,0 +1,1051 @@
+{
+  "generated_at": "2026-10-21T20:13:20.388541+08:00",
+  "browser_method": "Isolated Playwright-controlled Microsoft Edge; built-in browser interaction unavailable",
+  "cloud": "http://47.238.193.145:8088",
+  "fixed_frontend_test": "http://127.0.0.1:4178 serving production build; proxy uses the live ECS backend",
+  "deployment_status": "Local source and production build verified; cloud frontend update pending",
+  "page_count": 24,
+  "pages": [
+    {
+      "path": "/index",
+      "title": "首页",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "01-首页.png"
+    },
+    {
+      "path": "/container",
+      "title": "算力平台",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "02-算力平台.png"
+    },
+    {
+      "path": "/file",
+      "title": "遥感数据管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "03-遥感数据管理.png"
+    },
+    {
+      "path": "/task",
+      "title": "任务管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "04-任务管理.png"
+    },
+    {
+      "path": "/system/user",
+      "title": "用户管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "05-用户管理.png"
+    },
+    {
+      "path": "/system/role",
+      "title": "角色管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "06-角色管理.png"
+    },
+    {
+      "path": "/system/menu",
+      "title": "菜单管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "07-菜单管理.png"
+    },
+    {
+      "path": "/system/dept",
+      "title": "小组管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "08-小组管理.png"
+    },
+    {
+      "path": "/system/post",
+      "title": "职责管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "09-职责管理.png"
+    },
+    {
+      "path": "/system/dict",
+      "title": "字典管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "10-字典管理.png"
+    },
+    {
+      "path": "/system/config",
+      "title": "参数设置",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "11-参数设置.png"
+    },
+    {
+      "path": "/system/log/operlog",
+      "title": "操作日志",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "12-操作日志.png"
+    },
+    {
+      "path": "/system/log/logininfor",
+      "title": "登录日志",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "13-登录日志.png"
+    },
+    {
+      "path": "/node",
+      "title": "节点管理",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "14-节点管理.png"
+    },
+    {
+      "path": "/monitor/online",
+      "title": "在线用户",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "15-在线用户.png"
+    },
+    {
+      "path": "/monitor/server",
+      "title": "服务监控",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "16-服务监控.png"
+    },
+    {
+      "path": "/monitor/cache",
+      "title": "缓存监控",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "17-缓存监控.png"
+    },
+    {
+      "path": "/monitor/cacheList",
+      "title": "缓存列表",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "18-缓存列表.png"
+    },
+    {
+      "path": "/map",
+      "title": "监测平台",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "19-监测平台.png"
+    },
+    {
+      "path": "/notice",
+      "title": "通知公告",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "20-通知公告.png"
+    },
+    {
+      "path": "/tool/build",
+      "title": "表单构建",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "21-表单构建.png"
+    },
+    {
+      "path": "/tool/gen",
+      "title": "代码生成",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "22-代码生成.png"
+    },
+    {
+      "path": "/tool/swagger",
+      "title": "系统接口",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "23-系统接口.png"
+    },
+    {
+      "path": "/user/profile",
+      "title": "个人中心",
+      "javascript_errors": [],
+      "api_errors": [],
+      "pending_requests": [],
+      "screenshot": "24-个人中心.png"
+    }
+  ],
+  "business_workflow": {
+    "passed": true,
+    "task_id": 55,
+    "input_folder": 171,
+    "result_folder": 174,
+    "input_sha256": "faa8aae6bb4d4e8588a20c2737071a21d3ed8ff617b57d8faa285f52e6a82f89",
+    "input_description": "Original unmodified 800x800 transmission tower photo from the supplied segmentation archive",
+    "steps": [
+      {
+        "step": "30-model-algorithm-registry",
+        "algorithmResponseKeys": [
+          "code",
+          "msg",
+          "data",
+          "success",
+          "time"
+        ],
+        "modelResponseKeys": [
+          "code",
+          "msg",
+          "data",
+          "success",
+          "time"
+        ]
+      },
+      {
+        "step": "31-historical-result-preview",
+        "width": 800,
+        "height": 413
+      },
+      {
+        "step": "31-historical-result-download",
+        "name": "恢复验收输入_184235.jpg",
+        "bytes": 145804,
+        "sha256": "7c3ce43642866e211086c426f28543d7962d6dc7416fb806218c7764132c2822"
+      },
+      {
+        "step": "32-uploaded-test-image",
+        "folderId": 171,
+        "files": 1
+      },
+      {
+        "step": "33-task-platform"
+      },
+      {
+        "step": "34-task-algorithm"
+      },
+      {
+        "step": "35-task-parameters"
+      },
+      {
+        "step": "36-task-created",
+        "taskId": 55
+      },
+      {
+        "step": "37-real-inference-completed",
+        "taskId": 55,
+        "state": "success",
+        "resultFolder": 174
+      },
+      {
+        "step": "38-new-detection-result-preview",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "step": "38-new-detection-result-download",
+        "name": "验收样例.jpg",
+        "bytes": 77845,
+        "sha256": "256f711be3bbe677c984535e10aadaf3e412c1ce373538d08bfbcf12b6939df6"
+      }
+    ]
+  },
+  "algorithms": {
+    "method": "sequential real ECS CPU inference through authenticated task API; UI end-to-end detection verified separately",
+    "results": [
+      {
+        "name": "algorithm",
+        "status": "passed",
+        "started": "2026-10-21T11:59:51.359Z",
+        "taskId": 56,
+        "resultFolder": 178,
+        "state": "success",
+        "files": [
+          {
+            "id": 179,
+            "name": "验收样例.txt",
+            "bytes": 37,
+            "sha256": "424e5ad9b61e47f57feefd9eb7897d6b6f18046d0aa3b6d67ab7d2f51eff6c23",
+            "localPath": "algorithm-results\\01\\179-验收样例.txt"
+          }
+        ],
+        "seconds": 13.46
+      },
+      {
+        "name": "deeplabv3",
+        "status": "passed",
+        "started": "2026-10-21T12:00:04.822Z",
+        "taskId": 57,
+        "resultFolder": 181,
+        "state": "success",
+        "files": [
+          {
+            "id": 182,
+            "name": "001_验收样例_seg.png",
+            "bytes": 9261,
+            "sha256": "8392cd4090d6ceac3bfa1463902816c071c14fe34a007bf466ae1baa23f71a0e",
+            "localPath": "algorithm-results\\02\\182-001_验收样例_seg.png"
+          },
+          {
+            "id": 183,
+            "name": "001_验收样例_overlay.png",
+            "bytes": 426138,
+            "sha256": "e7a3a0650610d2dd59c4830714ad056123920a4d7917aa62d6209de80d0090a1",
+            "localPath": "algorithm-results\\02\\183-001_验收样例_overlay.png"
+          },
+          {
+            "id": 184,
+            "name": "001_验收样例_statistics.json",
+            "bytes": 1419,
+            "sha256": "2627baa86fca374dbc7ccc677cc9718319dc4f1d85f264ff913dda704d7002d2",
+            "localPath": "algorithm-results\\02\\184-001_验收样例_statistics.json"
+          },
+          {
+            "id": 185,
+            "name": "001_验收样例_pred.png",
+            "bytes": 7216,
+            "sha256": "abd4a87bdd84b0021606cdecaceea2f4069b10680d47ba3e5ee0b45476cc4c9e",
+            "localPath": "algorithm-results\\02\\185-001_验收样例_pred.png"
+          },
+          {
+            "id": 186,
+            "name": "001_验收样例_statistics.txt",
+            "bytes": 96,
+            "sha256": "71e55cd34a037be8646855dd3f77d22b033b6562c0268b9a6b13d8b0ad5e72fe",
+            "localPath": "algorithm-results\\02\\186-001_验收样例_statistics.txt"
+          }
+        ],
+        "seconds": 7.76
+      },
+      {
+        "name": "去雨后增强处理",
+        "status": "passed",
+        "started": "2026-10-21T12:00:12.585Z",
+        "taskId": 58,
+        "resultFolder": 188,
+        "state": "success",
+        "files": [
+          {
+            "id": 189,
+            "name": "验收样例.jpg",
+            "bytes": 153245,
+            "sha256": "18892b061771b2ceed8f519c71209052f330aafce3741b39feb07a0d34e01666",
+            "localPath": "algorithm-results\\03\\189-验收样例.jpg"
+          }
+        ],
+        "seconds": 5.05
+      },
+      {
+        "name": "去雾恢复",
+        "status": "passed",
+        "started": "2026-10-21T12:00:17.636Z",
+        "taskId": 59,
+        "resultFolder": 191,
+        "state": "success",
+        "files": [
+          {
+            "id": 192,
+            "name": "验收样例.jpg",
+            "bytes": 191077,
+            "sha256": "880343acc05ca582e96b371cd56701793b06579eb7ff951d7f39ee0b83da60fe",
+            "localPath": "algorithm-results\\04\\192-验收样例.jpg"
+          }
+        ],
+        "seconds": 2.95
+      },
+      {
+        "name": "曝光校正与细节恢复",
+        "status": "passed",
+        "started": "2026-10-21T12:00:20.586Z",
+        "taskId": 60,
+        "resultFolder": 194,
+        "state": "success",
+        "files": [
+          {
+            "id": 195,
+            "name": "验收样例.jpg",
+            "bytes": 149726,
+            "sha256": "47d82e77928a0fed38091539a50f44038347b645c9a823dc9ded690fce727f30",
+            "localPath": "algorithm-results\\05\\195-验收样例.jpg"
+          }
+        ],
+        "seconds": 3
+      },
+      {
+        "name": "电气设备缺陷检测模型算法",
+        "status": "passed",
+        "taskId": 55,
+        "resultFolder": 174,
+        "method": "browser wizard, execution confirmation, image preview and download",
+        "files": [
+          {
+            "id": 175,
+            "name": "验收样例.jpg",
+            "bytes": 77845,
+            "sha256": "256f711be3bbe677c984535e10aadaf3e412c1ce373538d08bfbcf12b6939df6",
+            "localPath": "algorithm-results\\06\\175-验收样例.jpg"
+          },
+          {
+            "id": 176,
+            "name": "验收样例.txt",
+            "bytes": 259,
+            "sha256": "0c3e6ac855ca391761c8a5e10a74fc292afa1ed9036a679f064f89cc64c7fd0e",
+            "localPath": "algorithm-results\\06\\176-验收样例.txt"
+          }
+        ]
+      },
+      {
+        "name": "电气设备语义分割模型算法",
+        "status": "passed",
+        "started": "2026-10-21T12:00:23.590Z",
+        "taskId": 61,
+        "resultFolder": 197,
+        "state": "success",
+        "files": [
+          {
+            "id": 198,
+            "name": "验收样例.jpg",
+            "bytes": 121540,
+            "sha256": "a2d6e7a53120632de84c4f4be0631f729eefc101aa548fbb42862570ffca5ae4",
+            "localPath": "algorithm-results\\07\\198-验收样例.jpg"
+          },
+          {
+            "id": 199,
+            "name": "验收样例.txt",
+            "bytes": 95,
+            "sha256": "140b6938caac9dba3680fe447faa8f45b4df5a101e13b87f020c5b73fbfeebc2",
+            "localPath": "algorithm-results\\07\\199-验收样例.txt"
+          }
+        ],
+        "seconds": 7.3
+      },
+      {
+        "name": "逆光&曝光处理",
+        "status": "passed",
+        "started": "2026-10-21T12:00:30.888Z",
+        "taskId": 62,
+        "resultFolder": 201,
+        "state": "success",
+        "files": [
+          {
+            "id": 202,
+            "name": "验收样例.jpg",
+            "bytes": 149726,
+            "sha256": "47d82e77928a0fed38091539a50f44038347b645c9a823dc9ded690fce727f30",
+            "localPath": "algorithm-results\\08\\202-验收样例.jpg"
+          }
+        ],
+        "seconds": 3
+      },
+      {
+        "name": "雨天图像处理",
+        "status": "passed",
+        "started": "2026-10-21T12:00:33.890Z",
+        "taskId": 63,
+        "resultFolder": 204,
+        "state": "success",
+        "files": [
+          {
+            "id": 205,
+            "name": "验收样例.jpg",
+            "bytes": 153245,
+            "sha256": "18892b061771b2ceed8f519c71209052f330aafce3741b39feb07a0d34e01666",
+            "localPath": "algorithm-results\\09\\205-验收样例.jpg"
+          }
+        ],
+        "seconds": 5.06
+      },
+      {
+        "name": "语义增强",
+        "status": "passed",
+        "started": "2026-10-21T12:00:38.948Z",
+        "taskId": 64,
+        "resultFolder": 207,
+        "state": "success",
+        "files": [
+          {
+            "id": 208,
+            "name": "001_验收样例_seg.png",
+            "bytes": 9647,
+            "sha256": "badf412a4d6b5d89a1c5f21283b67e9c0f032d81a7f36af0d40828902000405a",
+            "localPath": "algorithm-results\\10\\208-001_验收样例_seg.png"
+          },
+          {
+            "id": 209,
+            "name": "001_验收样例_overlay.png",
+            "bytes": 426440,
+            "sha256": "7c607e422617f92af5967e6397810507539e577f1a1b330b92bbdfce91417fea",
+            "localPath": "algorithm-results\\10\\209-001_验收样例_overlay.png"
+          },
+          {
+            "id": 210,
+            "name": "001_验收样例_statistics.json",
+            "bytes": 1421,
+            "sha256": "4bc7aad76352425430ff7003fdbc07b97e6c5f2163c26587d6ebfc4fa3b5ae11",
+            "localPath": "algorithm-results\\10\\210-001_验收样例_statistics.json"
+          },
+          {
+            "id": 211,
+            "name": "001_验收样例_pred.png",
+            "bytes": 7594,
+            "sha256": "48bf1b3d1c5fbe18d9cd92efb76e0b025286287a586e11026057db1e211d4982",
+            "localPath": "algorithm-results\\10\\211-001_验收样例_pred.png"
+          },
+          {
+            "id": 212,
+            "name": "001_验收样例_statistics.txt",
+            "bytes": 116,
+            "sha256": "c420cdc0e3cfa9d9b930fb9caf8801c4cff11a439c7474e24dfde60c90ed0c84",
+            "localPath": "algorithm-results\\10\\212-001_验收样例_statistics.txt"
+          }
+        ],
+        "seconds": 7.74
+      },
+      {
+        "name": "遮挡关系融合骨架",
+        "status": "passed",
+        "started": "2026-10-21T12:00:46.685Z",
+        "taskId": 65,
+        "resultFolder": 214,
+        "state": "success",
+        "files": [
+          {
+            "id": 215,
+            "name": "001_验收样例_reconstruct.png",
+            "bytes": 491824,
+            "sha256": "2995f9493de9655420b197da8803b5357ec6eca1717f4c3f8f09a3ae60f8a18e",
+            "localPath": "algorithm-results\\11\\215-001_验收样例_reconstruct.png"
+          },
+          {
+            "id": 216,
+            "name": "001_验收样例_added_mask.png",
+            "bytes": 1289,
+            "sha256": "2a9665a03a1a240bf663332fc7cde47d617bdfbe64beb22aaf4a6bfb3f6c6ad6",
+            "localPath": "algorithm-results\\11\\216-001_验收样例_added_mask.png"
+          },
+          {
+            "id": 217,
+            "name": "001_验收样例_filled_id.png",
+            "bytes": 7351,
+            "sha256": "b13f9c141827aa1065a04f900ae845addb94b8430891961a9097ba2ac1bc229f",
+            "localPath": "algorithm-results\\11\\217-001_验收样例_filled_id.png"
+          },
+          {
+            "id": 218,
+            "name": "001_验收样例_seg.png",
+            "bytes": 9080,
+            "sha256": "7346bf0bf8db066feb196e6808332c4318b7d0f5238dc1fddb6bb11cf2df8d85",
+            "localPath": "algorithm-results\\11\\218-001_验收样例_seg.png"
+          },
+          {
+            "id": 219,
+            "name": "001_验收样例_occlusion.json",
+            "bytes": 1921,
+            "sha256": "04e699ad264869810283d7519c01bef0a358ae7d8209676368e8c6ada6f39bd7",
+            "localPath": "algorithm-results\\11\\219-001_验收样例_occlusion.json"
+          },
+          {
+            "id": 220,
+            "name": "001_验收样例_filled_color.png",
+            "bytes": 9272,
+            "sha256": "2aadca3d347ed7818e3fb3f82d6c380fb1a5e9c7cdc94e4e27881dac7814b863",
+            "localPath": "algorithm-results\\11\\220-001_验收样例_filled_color.png"
+          },
+          {
+            "id": 221,
+            "name": "001_验收样例_overlay.png",
+            "bytes": 437218,
+            "sha256": "8586549fc80a3b2617ee0459751267637f9f322e58effcd0bd7e7c307e32256b",
+            "localPath": "algorithm-results\\11\\221-001_验收样例_overlay.png"
+          },
+          {
+            "id": 222,
+            "name": "001_验收样例_statistics.json",
+            "bytes": 1420,
+            "sha256": "a99e51c8ea74d79f18e7cb3fe7709cfe8debc231e50c7110c2a1fd95954cc398",
+            "localPath": "algorithm-results\\11\\222-001_验收样例_statistics.json"
+          },
+          {
+            "id": 223,
+            "name": "001_验收样例_pred.png",
+            "bytes": 7221,
+            "sha256": "857647806d67ab4d39a2b794857fba3103167cb20718c4a6bbc45502a8d81419",
+            "localPath": "algorithm-results\\11\\223-001_验收样例_pred.png"
+          },
+          {
+            "id": 224,
+            "name": "001_验收样例_filled_overlay.png",
+            "bytes": 437255,
+            "sha256": "5fecd776c4259da18daaae922b75ffe84e98465bf715f1f55039d37626d160a3",
+            "localPath": "algorithm-results\\11\\224-001_验收样例_filled_overlay.png"
+          },
+          {
+            "id": 225,
+            "name": "001_验收样例_statistics.txt",
+            "bytes": 96,
+            "sha256": "71e55cd34a037be8646855dd3f77d22b033b6562c0268b9a6b13d8b0ad5e72fe",
+            "localPath": "algorithm-results\\11\\225-001_验收样例_statistics.txt"
+          }
+        ],
+        "seconds": 13.94
+      }
+    ],
+    "passed": true
+  },
+  "validated_output_files": 31,
+  "output_types": {
+    "images": 21,
+    "json": 4,
+    "text": 6
+  },
+  "fixes": [
+    {
+      "issue": "Login hangs when menu retrieval or expired-session logout fails",
+      "verification": [
+        {
+          "scenario": "menu-failure",
+          "url": "http://127.0.0.1:4178/login?redirect=/index",
+          "loginButtonStuck": false,
+          "tokenCleared": true,
+          "errors": []
+        },
+        {
+          "scenario": "expired-session-logout-failure",
+          "url": "http://127.0.0.1:4178/login?redirect=/index",
+          "loginButtonStuck": false,
+          "tokenCleared": true,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "issue": "Cancelling execution marks a task as failed; queued tasks can be resubmitted",
+      "verification": {
+        "scenario": "cancel-execution-confirmation",
+        "stateText": "等待中",
+        "processRequests": 0
+      }
+    },
+    {
+      "issue": "Partial folder upload falsely reports success; nested upload progress resets",
+      "verification": {
+        "scenario": "partial-upload-failure",
+        "requests": 3,
+        "reportedAsSuccess": false,
+        "reportedAsFailure": true,
+        "messages": [
+          "隔离验收模拟：第二张图片上传失败",
+          "文件夹上传失败: 1 个文件上传失败，已成功上传 1 个文件"
+        ]
+      },
+      "nested_cases": [
+        {
+          "case": "nested-success",
+          "uploaded": 3,
+          "processed": 3,
+          "failed": 0,
+          "passed": true
+        },
+        {
+          "case": "nested-partial-failure",
+          "uploaded": 2,
+          "processed": 3,
+          "failed": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "issue": "Editing task metadata overwrites saved custom algorithm parameters with defaults",
+      "verification": {
+        "scenario": "task-edit-preserves-custom-parameters",
+        "inputConfidence": 0.73,
+        "customParameter": "保留自定义参数",
+        "fileIds": [
+          117
+        ],
+        "passed": true
+      }
+    },
+    {
+      "issue": "Map initially has no markers and retains stale markers after empty refresh",
+      "verification": {
+        "initialMarkers": 4,
+        "explicitMarkers": 4,
+        "afterEmptyRefresh": 0,
+        "errors": [],
+        "passed": true
+      }
+    }
+  ],
+  "node_map_and_docs_controls": {
+    "passed": true,
+    "steps": [
+      {
+        "name": "40-node-created-edited",
+        "nodeId": 6
+      },
+      {
+        "name": "41-node-export-template",
+        "exportBytes": 5208,
+        "templateBytes": 5047
+      },
+      {
+        "name": "42-map-associated-image",
+        "imageWidth": 800
+      },
+      {
+        "name": "43-map-clear-and-restore",
+        "markers": 5
+      },
+      {
+        "name": "44-node-deleted",
+        "nodeId": 6,
+        "remainingNodes": 4
+      },
+      {
+        "name": "45-api-documentation",
+        "title": "复杂背景下输电线路关键部件精准识别与缺陷智能检测系统\n 1.2.0 \nOAS 3.1"
+      }
+    ],
+    "javascript_errors": [],
+    "temporary_node_deleted": true
+  },
+  "data_preservation": {
+    "deletedTasks": [
+      45,
+      44,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "deletedFiles": [
+      117,
+      116,
+      124,
+      123,
+      127,
+      128,
+      129,
+      130,
+      131,
+      126,
+      134,
+      133,
+      137,
+      136,
+      140,
+      139,
+      120,
+      121,
+      119,
+      143,
+      144,
+      142,
+      147,
+      146,
+      150,
+      149,
+      153,
+      154,
+      155,
+      156,
+      157,
+      152,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      159,
+      115
+    ],
+    "retainedRealImageTasks": [
+      56,
+      57,
+      58,
+      59,
+      60,
+      55,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "passed": true,
+    "backup": "D:\\Work_space\\project\\TransmissionLineDefectSystem-backups\\cloud-qa-data-20261021120212",
+    "originalTasksPreserved": 6,
+    "originalFileRecordsPreserved": 26
+  },
+  "production_build": "passed; 2387 modules; vite build production",
+  "update_helper_checks": [
+    {
+      "scenario": "success",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "scenario": "unknown-existing-source",
+      "passed": true,
+      "exitCode": 1
+    },
+    {
+      "scenario": "build-failure",
+      "passed": true,
+      "exitCode": 42
+    }
+  ],
+  "limits": [
+    "Default parameters on one real tower photo verify execution and output readability, not detection accuracy or load capacity.",
+    "11 registered entries include aliases and a demo entry; they are not 11 independent neural network architectures.",
+    "Seven-class model retains numeric class IDs because the supplied archive has no class-name mapping.",
+    "Administration pages were browsed; existing user accounts, permissions and global settings were preserved."
+  ],
+  "screenshots": [
+    {
+      "file": "00-登录页面.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "fc97b4e2917d27048b43e99845dde25e4c3bd5020a941fdbef8a039aeb58dc12"
+    },
+    {
+      "file": "01-首页.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "6639325bc05cf6df5da3f7896bfbeae91bc833b92cc1aba9e48162d67161397c"
+    },
+    {
+      "file": "02-算力平台.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "32e4d84e0008f819c7dde28b4a2cdcfe65a06a61b10ea1d6b76da2d4f9d420a0"
+    },
+    {
+      "file": "03-遥感数据管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "1d80969a36bc30e5e2adaaced55e72894ec954b3ab3e56d247f1ff7aad20e01c"
+    },
+    {
+      "file": "04-任务管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "f5254f490af179a0206eda72fdcfb950a800f2cc37757ba2f88de0ab68df9036"
+    },
+    {
+      "file": "05-用户管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "41499832929d712eceeac22236851432bc8597692d7ecdb1754980b9324313f7"
+    },
+    {
+      "file": "06-角色管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "067ad5d493346e70cbe49a650ca0eedd385981f9c51307e392d9742544e649fc"
+    },
+    {
+      "file": "07-菜单管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "6a4414b83b542de735cb6cc7211e40b572017387a8d6233bdba145591149d165"
+    },
+    {
+      "file": "08-小组管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "21f6ea773c1e2b6e4829e025b83df52821850aee816b91b32d96f4d5459c83b9"
+    },
+    {
+      "file": "09-职责管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "60ff7254ccf0924cff8c4527d3f5589d6fce15870e79b923c6f0783d68743c6e"
+    },
+    {
+      "file": "10-字典管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "c71f59bae0e6c2f1ee7413cfc3aa627d8ac464eec3dd89066333d4fbba687bbe"
+    },
+    {
+      "file": "11-参数设置.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "b82535939993e9cb6169df5f5f3ed270347e83ac21df56440a90248b55fc2659"
+    },
+    {
+      "file": "12-操作日志.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "c32cd758b99fd0bbbd3d4913b40ba1f7c8f72cdfb90aee7fc542941032c155c4"
+    },
+    {
+      "file": "13-登录日志.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "bb43d998dae9a04f6555dbdf621076ed3c1100463981ba3257b9c8a25a3f1d41"
+    },
+    {
+      "file": "14-节点管理.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "bedf3b91ffb607a82aa190e0870a07d7af50ea0e3e2563ebc3ef0c8b2849b0a3"
+    },
+    {
+      "file": "15-在线用户.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "83326489371c2df8bfcf8f01643f809f588e6acc97620148dc5317e26fe4296e"
+    },
+    {
+      "file": "16-服务监控.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "de75ec34306a01bcd6b4d7f33195babbd9d3b1738d3715c87c4254d5e36a2a95"
+    },
+    {
+      "file": "17-缓存监控.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "eb31ae76793025038834659bd10117c954bb6e0a74461b63afa7c896b6a1fea9"
+    },
+    {
+      "file": "18-缓存列表.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "c82793b1f52fd735b358e8c371b98470b7d0dc5165556c0f79894b0894d7e896"
+    },
+    {
+      "file": "19-监测平台.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "8cb27bf5da57ccd7109351b331a175b7e7d5d02f98fcb0629b8eb0c8bff22126"
+    },
+    {
+      "file": "20-通知公告.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "797a8b259eb6944e4429c6039b30052cb43ba0e9d718bd6480fe5639181baf91"
+    },
+    {
+      "file": "21-表单构建.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "b8b23926d2180769b8c0a7cf525f378bb6a244fe8169fadbb7edb8441b69749b"
+    },
+    {
+      "file": "22-代码生成.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "ced52c9b41d6ec6d7a867a4910bc18b69d8b3f26a7ff77e70e106417f94260b1"
+    },
+    {
+      "file": "23-系统接口.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "3c4ad92418987cdf95dcede79e49665e3585155f34271ebbf7973e9b3748e5e0"
+    },
+    {
+      "file": "24-个人中心.png",
+      "scope": "修复后的本机前端，连接真实云端后端",
+      "sha256": "7c6fa184e65e5062dcca5b5409bca739f76334033b48996f56f37559240d4b89"
+    },
+    {
+      "file": "30-model-algorithm-registry.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "a987c733a03e81e1163da3df0505fc6b96db74efd28d2fb2ff388f99cd7e79a6"
+    },
+    {
+      "file": "32-uploaded-test-image.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "7caa147fee42995571123cfd56ee6d50b9c2720006cdc06f11effcdd518c0c57"
+    },
+    {
+      "file": "33-task-platform.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "d2df3e6f30ceb5f04d9c19a74ff109c2a50f25277d788872651e883b70c08150"
+    },
+    {
+      "file": "34-task-algorithm.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "21f9d494aeacbda21fd13978e6740f940298e9e41213bb36235dcd5843f91d3c"
+    },
+    {
+      "file": "35-task-parameters.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "c55aedca372de9eb817ef547f0b1e6dc9bfb1c3f7491a03769858409f54ff6e4"
+    },
+    {
+      "file": "36-task-created.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "657ace8e9e376cc1786e6f6f45bf485a8ea28fc4c7ec47c10f672ff85a51d89f"
+    },
+    {
+      "file": "37-real-inference-completed.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "80a7ced065cd85fd4fc156beb4502e06bd05784257ebabb042cf1fd255921968"
+    },
+    {
+      "file": "38-new-detection-result-preview.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "1591e68bdb1f81912c9724f1d03a240e2e8f5edc6a9a0008530f3cb8d553878f"
+    },
+    {
+      "file": "38-new-detection-result-download.png",
+      "scope": "修复后的本机前端；真实输电塔照片；真实云端任务 55",
+      "sha256": "825904913dcc44191433cd8d07800798198d349718f6457dde53c78b06f16ab6"
+    },
+    {
+      "file": "40-node-created-edited.png",
+      "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+      "sha256": "3db22eed4f7d6dd1cdfbeb07665f6537d3d72d9269ec19730d3c0a8623866a61"
+    },
+    {
+      "file": "41-node-export-template.png",
+      "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+      "sha256": "9f51eeca85be8937454948607db16184d8e35d5e352228be6e33d636e217eeee"
+    },
+    {
+      "file": "44-node-deleted.png",
+      "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+      "sha256": "5e0fae9d878f1b48c2fbc0f69f62a3ee22d823a4d8c1403419c38c0f7a69c064"
+    },
+    {
+      "file": "45-api-documentation.png",
+      "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+      "sha256": "3c4ad92418987cdf95dcede79e49665e3585155f34271ebbf7973e9b3748e5e0"
+    },
+    {
+      "file": "46-task-deletion.png",
+      "scope": "真实云端页面操作；临时节点和旧连通性测试任务已清理",
+      "sha256": "7f80543ba31267efcc5899688db7854246ee3c577732594c4376f50056e9ddf0"
+    },
+    {
+      "file": "80-取消执行保持原状态.png",
+      "scope": "修复后的本机前端；异常测试使用隔离响应，不改动真实业务记录",
+      "sha256": "94069e63cb888c32d4a976543daf79e625c63920f59c279065227a37ae98ebf8"
+    },
+    {
+      "file": "81-部分上传失败正确提示.png",
+      "scope": "修复后的本机前端；异常测试使用隔离响应，不改动真实业务记录",
+      "sha256": "72a6f9d7d6e21b4808978589b92d7cb7d20b9494bc988d3a40cf27b2eab78619"
+    },
+    {
+      "file": "82-地图自动显示真实节点.png",
+      "scope": "修复后的本机前端；异常测试使用隔离响应，不改动真实业务记录",
+      "sha256": "fabaaa2ef919e11a413de5e5becc5f5ed72f9bc75ebcb49e66933856381075c7"
+    }
+  ]
+}
