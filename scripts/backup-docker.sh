@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 umask 077
+# Backups have no stdin payload; Docker must not consume a caller's here-document.
+exec < /dev/null
 project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$project_root"
 compose=(docker compose --env-file .env.docker)
@@ -20,7 +22,7 @@ set -o noclobber
 "${compose[@]}" exec -T postgres sh -c \
     'exec pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Fc' \
     > "$backup_dir/database.dump"
-"${compose[@]}" run --rm --no-deps --entrypoint tar backend \
+"${compose[@]}" run --rm -T --no-deps --entrypoint tar backend \
     -C /app -czf - upload_file vf_admin \
     > "$backup_dir/backend-files.tar.gz"
 tar -czf "$backup_dir/algorithm-data.tar.gz" \

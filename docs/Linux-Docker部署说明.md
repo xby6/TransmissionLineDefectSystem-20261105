@@ -93,6 +93,8 @@ Git 仅保护代码和已登记原模型，不保护数据库、上传图片、�
 
 Linux 服务器先执行一次正常部署，确认镜像可构建，再停止前端、后端和算法，导入前备份服务器当前数据。以下命令会替换目标服务器数据库，只用于你确认要恢复的目标环境：
 
+批量执行迁移时，将命令保存为 `.sh` 文件后用 `bash 文件名` 运行。`docker compose exec -T` 仍默认读取标准输入，把整段脚本通过 `bash <<...` 执行时，Docker 可能读走后续命令。无输入的容器命令使用 `</dev/null`；数据库和业务文件导入则显式重定向到对应备份文件。备份脚本已关闭自身标准输入，避免影响调用方的后续命令。
+
 ```bash
 docker compose --env-file .env.docker stop frontend backend algo-server
 docker compose --env-file .env.docker exec -T postgres sh -c \

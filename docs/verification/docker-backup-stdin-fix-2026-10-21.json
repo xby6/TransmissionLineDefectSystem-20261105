@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-21",
+  "status": "passed",
+  "test": "Run the real backup script in an isolated fixture with a Docker CLI stand-in that drains stdin, then check that the caller executes its next command",
+  "results": {
+    "before": {
+      "exit_code": 0,
+      "backup_completed": true,
+      "caller_continued": false
+    },
+    "after": {
+      "exit_code": 0,
+      "backup_completed": true,
+      "caller_continued": true
+    }
+  },
+  "scope": "No real Docker engine or business database accessed; cloud data restore remains pending"
+}
