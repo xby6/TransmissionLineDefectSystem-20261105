@@ -1,0 +1,15 @@
+__pycache__
+**/__pycache__
+*.py[cod]
+*.pyd
+*.dll
+*.so
+*.log
+logs
+build
+**/build
+.git
+mmcv
+# Retain ops_dcnv3: the checkpoint uses its PyTorch CPU reference functions.
+Dockerfile
+README.md

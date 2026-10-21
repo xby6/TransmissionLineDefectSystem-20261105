@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-21",
+  "status": "configuration_prepared_not_deployed",
+  "target": "Ubuntu 22.04 x86_64, CPU inference; 4 vCPU / 8 GiB is an unbenchmarked demo starting point",
+  "compose": {
+    "status": "passed",
+    "tool": "official Docker Compose v2.39.4 standalone CLI",
+    "sha256": "6b3bccfabcdd172e1d9e15d011b54c9b5b13b93b1153148108f55e4349055955",
+    "services": [
+      "algo-server",
+      "backend",
+      "frontend",
+      "postgres",
+      "redis"
+    ],
+    "published_ports": "frontend HTTP only",
+    "checks": [
+      "config JSON parsed",
+      "all bind sources and Dockerfile COPY inputs exist",
+      "missing required secrets rejected",
+      "all services define health checks"
+    ]
+  },
+  "dependencies": {
+    "status": "passed",
+    "method": "pip cross-platform Linux x86_64 dry-run resolution, then verify dependency version constraints with Linux environment markers; not a Linux runtime test",
+    "backend_resolved_packages": 84,
+    "algorithm_resolved_packages": 64,
+    "algorithm_torch": "2.5.1+cpu",
+    "algorithm_torchvision": "0.20.1+cpu",
+    "algorithm_lock_excludes": [
+      "imgaug",
+      "GUI opencv-python",
+      "PyPI ultralytics",
+      "MMCV CUDA wheels"
+    ]
+  },
+  "frontend": {
+    "status": "passed",
+    "checks": [
+      "npm ci from a clean temporary source directory",
+      "production build from that clean install",
+      "Linux x86_64 esbuild and Rollup optional binaries present in lock",
+      "267 static local imports checked for path-case mismatches"
+    ]
+  },
+  "database": {
+    "status": "passed",
+    "engine": "PostgreSQL 15.15 on an isolated temporary localhost cluster; stopped after testing",
+    "checks": [
+      "Original schema plus Docker initialization on an isolated PostgreSQL 15 cluster",
+      "Invalid initial password rolls back and leaves initialization pending",
+      "Fresh admin password hash, restored menus and internal algorithm platform",
+      "Container restart does not reset an existing password",
+      "Imported database preserves password, normalizes relative Windows paths and leaves external platforms unchanged"
+    ],
+    "existing_business_database": "not accessed or modified"
+  },
+  "scripts": {
+    "status": "passed",
+    "checks": [
+      "Bash syntax checks for deployment and backup scripts",
+      "Python compilation for config generator and Docker entrypoint",
+      "secret generator writes LF and refuses overwrite",
+      "private .env.docker ignored by Git"
+    ]
+  },
+  "pending": [
+    "Linux Docker image builds and image-level import/pip check",
+    "PostgreSQL 16 container initialization and five-service integration",
+    "all algorithms on real Linux containers",
+    "actual 8-GiB peak memory, performance, large inputs and concurrency",
+    "cloud deployment and external browser access",
+    "TLS certificate and HTTPS configuration if required"
+  ]
+}

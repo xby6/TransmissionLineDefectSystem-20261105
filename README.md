@@ -51,4 +51,8 @@ cd ..
 
 算法服务使用 `D:\tool\Python310\python.exe` 中已验收的 PyTorch 2.5.1 CPU 环境。算法依赖见算法目录的 requirements.txt；必须加载项目内自定义 ultralytics，不能替换为普通 PyPI 包。Node 和 Redis 路径可通过启动脚本参数设置。
 
-数据库和上传数据不由 Git 管理。不要在当前已有数据的数据库上直接运行 init.sql；恢复数据时优先新建空数据库，具体说明见 Git 恢复文档。原 Docker 文件保留，未作为本次 Windows 启动的验收方式。
+数据库和上传数据不由 Git 管理。不要在当前已有数据的数据库上直接运行 init.sql；恢复数据时优先新建空数据库，具体说明见 Git 恢复文档。
+
+## Linux Docker 部署
+
+2026-10-21 按 Linux + Docker 方案整理五服务 Compose、生产前端 Nginx、CPU 算法镜像、私有配置生成、初始化与数据备份流程。服务器上运行 `bash scripts/deploy-docker.sh`；完整步骤、现有数据迁移及验收边界见 [Linux Docker 部署说明](docs/Linux-Docker部署说明.md)。本机没有 Docker Engine，容器构建和云端算法运行仍需服务器实测。

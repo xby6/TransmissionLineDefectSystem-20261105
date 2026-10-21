@@ -1,0 +1,12 @@
+venv
+.venv
+__pycache__
+**/__pycache__
+*.py[cod]
+.env*
+logs
+upload_file
+vf_admin
+caches
+Dockerfile
+.git

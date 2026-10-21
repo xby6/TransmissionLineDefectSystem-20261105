@@ -51,5 +51,6 @@ vf_admin/
 **/upload_file/
 /backend/.env.dev
 /backend/.env.prod
+/.env.docker
 **/.yarn/
 

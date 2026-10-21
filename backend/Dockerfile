@@ -1,27 +1,14 @@
-# 使用官方 Python 运行环境作为基础镜像
-FROM python:3.12
+FROM python:3.11-slim-bookworm
 
-# 设置工作目录
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_DEFAULT_TIMEOUT=300
 WORKDIR /app
 
-ENV PIP_DEFAULT_TIMEOUT=300
-# 将依赖信息复制到容器中
-COPY requirements.txt .
+COPY requirements-local-lock.txt ./
+RUN python -m pip install --no-cache-dir -r requirements-local-lock.txt \
+    && python -m pip check
 
-# 安装依赖
-RUN pip install --upgrade pip setuptools wheel \
-    -i https://mirrors.aliyun.com/pypi/simple/ \
-    --trusted-host mirrors.aliyun.com && \
-    pip install --default-timeout=300 --no-cache-dir \
-    -i https://mirrors.aliyun.com/pypi/simple/ \
-    --trusted-host mirrors.aliyun.com \
-    -r requirements.txt
-
-# 将当前目录下的所有文件复制到容器的工作目录
 COPY . .
-
-# 暴露端口，FastAPI 默认端口是 8000
 EXPOSE 9099
-
-# 容器启动时运行的命令
-CMD ["python", "app.py", "--env=dev"]
+CMD ["python", "docker_entrypoint.py"]

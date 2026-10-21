@@ -1,59 +1,146 @@
+# Linux x86_64 / CPU deployment. Generate .env.docker before starting.
+# docker compose --env-file .env.docker up -d --build --wait
+name: transmission-line
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
 services:
   postgres:
-    image: postgres:16
-    container_name: transmission-postgres
+    image: postgres:16-bookworm
     restart: unless-stopped
     environment:
-      POSTGRES_USER: elyw
-      POSTGRES_PASSWORD: elyw1234
-      POSTGRES_DB: elyw_algo
+      POSTGRES_USER: ${POSTGRES_USER:-elyw}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Generate .env.docker first}
+      POSTGRES_DB: ${POSTGRES_DB:-elyw_algo}
       TZ: Asia/Shanghai
-    ports:
-      - "127.0.0.1:5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
-    networks:
-      - transmission-net
+      # These scripts run ONLY when the database volume is empty.
+      - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./deploy/initdb/02-docker.sql:/docker-entrypoint-initdb.d/02-docker.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    logging: *logging
 
   redis:
-    image: redis:7
-    container_name: transmission-redis
+    image: redis:7-bookworm
     restart: unless-stopped
-    command: ["redis-server", "--appendonly", "yes"]
-    ports:
-      - "127.0.0.1:6379:6379"
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "128mb", "--maxmemory-policy", "noeviction"]
     volumes:
       - redis_data:/data
-    networks:
-      - transmission-net
-
-  backend:
-    image: intelligentdetectionsystemfortransmissionlinedefects-backend:latest
-    container_name: transmission-backend
-    command: ["python", "app.py", "--env=prod"]
-    restart: unless-stopped
-    depends_on:
-      - postgres
-      - redis
-    ports:
-      - "127.0.0.1:9099:9099"
-    networks:
-      - transmission-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    logging: *logging
 
   algo-server:
-    image: transmission-algo
-    container_name: transmission-algo
+    build:
+      context: ./Intelligent Detection System for Transmission Line Defects-server
+    restart: unless-stopped
+    init: true
+    environment:
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+      YOLO_AUTOINSTALL: "false"
+      MPLBACKEND: Agg
+      TZ: Asia/Shanghai
+    volumes:
+      # Preserve algorithms, uploaded models and editable registries on the host.
+      - ./Intelligent Detection System for Transmission Line Defects-server/algo:/app/algo
+      - ./Intelligent Detection System for Transmission Line Defects-server/model:/app/model
+      - ./Intelligent Detection System for Transmission Line Defects-server/config.yaml:/app/config.yaml
+      - ./Intelligent Detection System for Transmission Line Defects-server/model_config.yaml:/app/model_config.yaml
+      - algo_logs:/app/logs
+    shm_size: 256mb
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/list', timeout=5).read()"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+    logging: *logging
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    init: true
+    environment:
+      APP_ENV: prod
+      APP_HOST: 0.0.0.0
+      APP_PORT: "9099"
+      APP_ROOT_PATH: /prod-api
+      APP_VERSION: 1.2.0
+      APP_NAME: 复杂背景下输电线路关键部件精准识别与缺陷智能检测系统
+      APP_RELOAD: "false"
+      APP_IP_LOCATION_QUERY: "false"
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?Generate .env.docker first}
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_USERNAME: ${POSTGRES_USER:-elyw}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?Generate .env.docker first}
+      DB_DATABASE: ${POSTGRES_DB:-elyw_algo}
+      DB_ECHO: "false"
+      DB_POOL_SIZE: "5"
+      DB_MAX_OVERFLOW: "5"
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: ""
+      REDIS_DATABASE: "3"
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Generate .env.docker first}
+      TZ: Asia/Shanghai
+    volumes:
+      - backend_files:/app/upload_file
+      - backend_profile:/app/vf_admin
+      - backend_cache:/app/caches
+      - backend_logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      algo-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9099/openapi.json', timeout=5).read()"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+    logging: *logging
+
+  frontend:
+    build:
+      context: ./frontend
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8000:8000"
-    networks:
-      - transmission-net
-
-networks:
-  transmission-net:
-    driver: bridge
+      - "${HTTP_PORT:-80}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    logging: *logging
 
 volumes:
   postgres_data:
   redis_data:
+  backend_files:
+  backend_profile:
+  backend_cache:
+  backend_logs:
+  algo_logs:
