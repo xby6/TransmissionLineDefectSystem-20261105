@@ -42,6 +42,8 @@ bash scripts/deploy-docker.sh
 
 若宿主机 80 已被其他程序占用，可先运行 `python3 scripts/configure_docker.py --http-port 8088`，再启动部署脚本，并在安全组开放选定的端口。
 
+若旧部署包在安装 PyTorch 时出现 `typing-extensions` 的 `inconsistent Name`，随后提示找不到 `flit_core`，请同步更新算法目录的 `Dockerfile`。修正版先安装 `pip==25.3`、`setuptools==79.0.1`、`wheel==0.45.1`，再以 `--no-deps` 从官方 CPU 源安装两个 PyTorch wheel，其余依赖按 `requirements-docker-lock.txt` 从 PyPI 安装。固定 wheel 版本也避免新 wheel 对 `packaging>=24.0` 的要求与项目锁定的 `packaging==23.2` 冲突。更新后重新运行 `bash scripts/deploy-docker.sh` 即可利用已有构建缓存继续；保留已经生成的 `.env.docker` 和迁移数据。
+
 ## 3. 验收
 
 ```bash

@@ -12,8 +12,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends libglib2.0-0 libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN python -m pip install --no-cache-dir "setuptools<82" wheel \
-    && python -m pip install --no-cache-dir \
+RUN python -m pip install --no-cache-dir --upgrade pip==25.3 setuptools==79.0.1 wheel==0.45.1 \
+    && python -m pip install --no-cache-dir --no-deps \
        torch==2.5.1+cpu torchvision==0.20.1+cpu \
        --index-url https://download.pytorch.org/whl/cpu
 

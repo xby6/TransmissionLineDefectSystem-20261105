@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-21",
+  "status": "local_dependency_validation_passed_cloud_rebuild_pending",
+  "observed_cloud_error": "pip 23.0.1 rejected typing_extensions metadata via CPU index; fallback sdist could not find flit_core",
+  "fix": {
+    "build_tools": {
+      "pip": "25.3",
+      "setuptools": "79.0.1",
+      "wheel": "0.45.1",
+      "packaging": "23.2",
+      "typing-extensions": "4.12.2"
+    },
+    "pytorch": "CPU wheels installed with --no-deps; dependencies installed by the unchanged 64-package lock from PyPI"
+  },
+  "validation": {
+    "isolated_windows_python310_bootstrap_install": "passed",
+    "bootstrap_pip_check": "passed",
+    "existing_linux_resolution_rechecked_packages": 64,
+    "active_linux_dependency_constraints_checked": 92,
+    "full_linux_docker_rebuild": "pending on ECS"
+  },
+  "cloud_progress_confirmed": [
+    "Migration archive under /opt passed SHA256",
+    "Project extracted and private Docker environment generated with HTTP_PORT=8088",
+    "Docker hello-world and base Python image pull succeeded"
+  ]
+}
