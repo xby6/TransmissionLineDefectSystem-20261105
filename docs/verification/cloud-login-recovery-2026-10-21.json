@@ -42,8 +42,51 @@
         "tokenCleared": true,
         "errors": []
       }
+    ],
+    "cloud_after_deployment": [
+      {
+        "scenario": "menu-failure",
+        "url": "http://47.238.193.145:8088/login?redirect=/index",
+        "loginButtonStuck": false,
+        "tokenCleared": true,
+        "errors": []
+      },
+      {
+        "scenario": "expired-session-logout-failure",
+        "url": "http://47.238.193.145:8088/login?redirect=/index",
+        "loginButtonStuck": false,
+        "tokenCleared": true,
+        "errors": []
+      }
     ]
   },
   "production_build": "passed; 2387 modules transformed",
-  "deployment_status": "local fix verified; cloud frontend update pending"
+  "deployment_status": "Cloud frontend updated; fresh public URL login and both failure recovery scenarios passed",
+  "cloud_post_deployment": {
+    "url": "http://47.238.193.145:8088/index",
+    "errors": [],
+    "failed_requests": [],
+    "api": [
+      {
+        "path": "/prod-api/captchaImage",
+        "status": 200
+      },
+      {
+        "path": "/prod-api/login",
+        "status": 200
+      },
+      {
+        "path": "/prod-api/getInfo",
+        "status": 200
+      },
+      {
+        "path": "/prod-api/getRouters",
+        "status": 200
+      },
+      {
+        "path": "/prod-api/statistics/all",
+        "status": 200
+      }
+    ]
+  }
 }
