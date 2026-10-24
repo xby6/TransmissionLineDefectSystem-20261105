@@ -314,7 +314,7 @@
 
 
     <!-- 文件选择对话框 - 树状结构 -->
-    <el-dialog title="选择文件" v-model="fileSelectionDialogVisible" width="1000px" append-to-body>
+    <el-dialog title="选择文件" v-model="fileSelectionDialogVisible" width="1000px" top="5vh" append-to-body>
       <div class="file-selection-dialog">
         <el-row :gutter="20">
           <!-- 左侧文件夹树 -->
@@ -368,19 +368,24 @@
                 </el-form>
               </div>
 
-              <!-- 修复Bug 1 & 2: 增加 row-key 和 reserve-selection 支持跨页/跨文件夹多选 -->
+              <div class="file-selection-summary" role="status">
+                <span>当前文件夹共 {{ fileSelectionTotal }} 张图片，本页 {{ fileSelectionList.length }} 张</span>
+                <span>列表可滚动查看，支持跨页、跨文件夹勾选</span>
+              </div>
               <el-table :data="fileSelectionList" v-loading="fileSelectionLoading"
-                @selection-change="handleFileSelectionChange" ref="fileSelectionTableRef" height="400" row-key="id">
+                @selection-change="handleFileSelectionChange" ref="fileSelectionTableRef" :max-height="filePickerTableMaxHeight" row-key="id">
                 <!-- reserve-selection 必须配合 row-key 使用 -->
                 <el-table-column type="selection" :reserve-selection="true" width="55" />
+                <el-table-column type="index" label="序号" width="55"
+                  :index="index => (fileSelectionQuery.pageNum - 1) * fileSelectionQuery.pageSize + index + 1" />
                 <el-table-column label="文件名称" prop="name" />
-                <el-table-column label="文件大小" prop="size" width="120">
+                <el-table-column label="文件大小" prop="size" width="100">
                   <template #default="scope">
                     {{ formatFileSize(scope.row.size) }}
                   </template>
                 </el-table-column>
-                <el-table-column label="文件类型" prop="type" width="120" />
-                <el-table-column label="创建时间" prop="uploadTime" width="180">
+                <el-table-column label="文件类型" prop="type" width="80" />
+                <el-table-column label="创建时间" prop="uploadTime" width="160">
                   <template #default="scope">
                     {{ parseTime(scope.row.uploadTime) }}
                   </template>
@@ -620,6 +625,7 @@ const fileParamLoading = ref(false);
 const fileParamList = ref([]);
 const fileParamTotal = ref(0);
 const fileSelectionTableRef = ref();
+const filePickerTableMaxHeight = ref(520);
 const folderTreeRef = ref();
 const folderTreeData = ref([]);
 const folderTreeLoading = ref(false);
@@ -932,6 +938,7 @@ function refreshFolderTree() {
 
 /** 打开文件选择对话框 (修复 Bug 1) */
 function openFileSelectionDialog() {
+  filePickerTableMaxHeight.value = Math.max(240, Math.min(520, window.innerHeight - 350));
   fileSelectionDialogVisible.value = true;
   fileSelectionSelected.value = []; // 清空临时选择数组
 
@@ -1983,6 +1990,24 @@ getList();
 </script>
 
 <style scoped>
+.file-selection-dialog .file-list-panel {
+  height: auto;
+  min-height: 500px;
+}
+
+.file-selection-dialog :deep(.el-table) {
+  flex-shrink: 0;
+}
+
+.file-selection-summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 10px 0;
+  color: #606266;
+  font-size: 13px;
+}
 /* 分页样式 */
 .pagination {
   margin-top: 15px;

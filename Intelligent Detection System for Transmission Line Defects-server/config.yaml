@@ -12,9 +12,9 @@ algorithms:
     intro: 使用随包 DeepLabV3+ 权重进行部件分割，输出类别掩膜、分割图、融合图和统计。
   去雨后增强处理:
     args: '{"strength": 0.3}'
-    args_intro: '{"strength": "去雨降噪强度（大于 0）"}'
+    args_intro: '{"strength": "雨丝处理强度（0～1，0 保留原图，默认 0.3）"}'
     file: algo/去雨后增强处理.py
-    intro: 去雨降噪、局部对比度增强和细节恢复。
+    intro: 方向性雨丝检测与局部图像重建，保留原始分辨率和未检测为雨丝的区域。
   去雾恢复:
     args: '{"omega": 0.95, "size": 15}'
     args_intro: '{"omega": "去雾强度（0 到 1）", "size": "暗通道窗口大小（正整数）"}'
@@ -42,9 +42,9 @@ algorithms:
     intro: 说明文档中的曝光处理入口，复用现有曝光校正与细节恢复实现。
   雨天图像处理:
     args: '{"strength": 0.3}'
-    args_intro: '{"strength": "去雨降噪强度（大于 0）"}'
+    args_intro: '{"strength": "雨丝处理强度（0～1，0 保留原图，默认 0.3）"}'
     file: algo/雨天图像处理.py
-    intro: 说明文档中的雨天图像处理入口，复用现有去雨降噪与增强实现。
+    intro: 雨天图像处理入口，复用方向性雨丝检测与局部重建实现。
   语义增强:
     args: '{"model_name": "语义增强", "overlay_alpha": 0.5, "device": "auto"}'
     args_intro: '{"model_name": "已登记的语义分割模型名称", "overlay_alpha": "分割图融合比例（0～1）", "device":

@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-24",
+  "request": "修复用户录屏中的文件列表显示及去雨效果问题",
+  "production_deployment": "pending_user_server_command",
+  "file_picker": {
+    "root_cause": "API 返回 9 张图片；固定高度 flex 面板压缩表格，第 9 行藏在滚动区域中。",
+    "fix": "自适应表格上限、取消父面板固定高度、增加图片数量与序号提示。",
+    "browser": "Playwright + Microsoft Edge isolated context",
+    "before": [
+      {
+        "height": 1100,
+        "rowCount": 9,
+        "bodyHeight": 360,
+        "lastRowVisibleWithoutScrolling": false,
+        "lastRowBottom": 664,
+        "bodyBottom": 641,
+        "summary": null,
+        "selected": "已选择 9 个文件",
+        "confirmedFileCount": 9,
+        "errors": []
+      },
+      {
+        "height": 800,
+        "rowCount": 9,
+        "bodyHeight": 360,
+        "lastRowVisibleWithoutScrolling": false,
+        "lastRowBottom": 646,
+        "bodyBottom": 623,
+        "summary": null,
+        "selected": "已选择 9 个文件",
+        "confirmedFileCount": 9,
+        "errors": []
+      }
+    ],
+    "after": [
+      {
+        "height": 1100,
+        "rowCount": 9,
+        "bodyHeight": 383,
+        "lastRowVisibleWithoutScrolling": true,
+        "lastRowBottom": 701,
+        "bodyBottom": 701,
+        "summary": "当前文件夹共 9 张图片，本页 9 张\n列表可滚动查看，支持跨页、跨文件夹勾选",
+        "selected": "已选择 9 个文件",
+        "confirmedFileCount": 9,
+        "errors": []
+      },
+      {
+        "height": 800,
+        "rowCount": 9,
+        "bodyHeight": 383,
+        "lastRowVisibleWithoutScrolling": true,
+        "lastRowBottom": 683,
+        "bodyBottom": 683,
+        "summary": "当前文件夹共 9 张图片，本页 9 张\n列表可滚动查看，支持跨页、跨文件夹勾选",
+        "selected": "已选择 9 个文件",
+        "confirmedFileCount": 9,
+        "errors": []
+      }
+    ]
+  },
+  "rain": {
+    "root_cause": "旧版降噪后做对比度增强与锐化，没有针对方向性雨丝的处理。",
+    "fix": "短亮雨丝检测、筛选与局部重建；两个去雨入口共享实现。",
+    "regression_tests_passed": 5,
+    "paired_synthetic_psnr_db": {
+      "before": 25.55,
+      "after": 35.64
+    },
+    "synthetic_metric_scope": "仅合成配对样例指标，不代表真实雨图的质量分数。",
+    "real_input_batch": {
+      "batch_seconds": 0.34028309999848716,
+      "entrypoints": [
+        "去雨后增强处理",
+        "雨天图像处理"
+      ],
+      "outputs": [
+        {
+          "name": "右线光缆_雨.png",
+          "width": 1448,
+          "height": 1086,
+          "sha256": "114df118b78a9db6fce1a06a100dd3fa373749862148ddbccbb9fbcc88d90c23",
+          "mask_fraction": 0.032050939633507324,
+          "unmasked_pixels_unchanged": true,
+          "bytes": 2684185
+        },
+        {
+          "name": "绝缘子-雨.png",
+          "width": 489,
+          "height": 456,
+          "sha256": "5ddaa5d0e17eb996d0c593a687750b2337a3e2c226f044c2c7aa8eef8eeec324",
+          "mask_fraction": 0.24777562515696194,
+          "unmasked_pixels_unchanged": true,
+          "bytes": 268183
+        },
+        {
+          "name": "销钉-雨.png",
+          "width": 512,
+          "height": 512,
+          "sha256": "e6f52855ca5577b6c22f2c0197f104e91636ab25a8c645ff12428aa837ac5178",
+          "mask_fraction": 0.19771957397460938,
+          "unmasked_pixels_unchanged": true,
+          "bytes": 468364
+        }
+      ]
+    },
+    "cloud_candidate": {
+      "candidate": "video_rain_verify_20261024_1792822259759",
+      "taskName": "视频去雨修复临时验收_1792822259759",
+      "passed": true,
+      "files": [
+        {
+          "id": 291,
+          "name": "右线光缆_雨.png",
+          "bytes": 2684182,
+          "sha256": "f5005af0561e7635de6d2c3557312de558c1e12e6f6635505cfadddfb65e4be0"
+        },
+        {
+          "id": 292,
+          "name": "销钉-雨.png",
+          "bytes": 468364,
+          "sha256": "e6f52855ca5577b6c22f2c0197f104e91636ab25a8c645ff12428aa837ac5178"
+        },
+        {
+          "id": 293,
+          "name": "绝缘子-雨.png",
+          "bytes": 268183,
+          "sha256": "5ddaa5d0e17eb996d0c593a687750b2337a3e2c226f044c2c7aa8eef8eeec324"
+        }
+      ],
+      "taskId": 73,
+      "resultFolder": 290,
+      "state": "success",
+      "recordBackup": "D:\\Work_space\\project\\TransmissionLineDefectSystem-backups\\video_rain_verify_20261024_1792822259759",
+      "temporaryTaskAndFilesRemoved": true,
+      "temporaryAlgorithmRemoved": true,
+      "originalRegistryPreserved": true
+    },
+    "cloud_local_pixel_comparison": [
+      {
+        "name": "右线光缆_雨.png",
+        "width": 1448,
+        "height": 1086,
+        "max_pixel_channel_delta": 1,
+        "mean_absolute_channel_delta": 6.359187244996592e-07,
+        "changed_channels": 3
+      },
+      {
+        "name": "绝缘子-雨.png",
+        "width": 489,
+        "height": 456,
+        "max_pixel_channel_delta": 0,
+        "mean_absolute_channel_delta": 0.0,
+        "changed_channels": 0
+      },
+      {
+        "name": "销钉-雨.png",
+        "width": 512,
+        "height": 512,
+        "max_pixel_channel_delta": 0,
+        "mean_absolute_channel_delta": 0.0,
+        "changed_channels": 0
+      }
+    ],
+    "limitations": "局部重建不能保证还原被雨遮挡的真实纹理；真实输入无配套清晰真值。"
+  },
+  "frontend_build": {
+    "command": "npm run build:prod",
+    "passed": true
+  },
+  "data_preservation": "原用户图片、任务、节点及 11 个算法入口保留；临时云端验收条目已备份并清理。",
+  "artifacts": [
+    "截图/视频问题修复-20261024/01-九张图片完整显示.png",
+    "截图/视频问题修复-20261024/02-较小窗口勾选九张.png",
+    "截图/视频问题修复-20261024/03-三张雨天图片修复对比.jpg"
+  ],
+  "update_helper_tests": [
+    {
+      "scenario": "success",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "scenario": "serialized-registry",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "scenario": "unknown-existing-source",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "scenario": "build-failure",
+      "passed": true,
+      "exit_code": 42
+    },
+    {
+      "scenario": "health-failure",
+      "passed": true,
+      "exit_code": 22
+    }
+  ]
+}
